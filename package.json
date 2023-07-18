@@ -1,0 +1,22 @@
+{
+  "name": "tms",
+  "version": "1.0.0",
+  "description": "Test Suite of TMS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wdio": "wdio run ./wdio.conf.js"
+  },
+  "author": "Tms QA",
+  "license": "ISC",
+  "dependencies": {
+    "@wdio/cli": "^8.13.5"
+  },
+  "devDependencies": {
+    "@wdio/local-runner": "^8.13.4",
+    "@wdio/mocha-framework": "^8.12.1",
+    "@wdio/spec-reporter": "^8.12.2",
+    "chromedriver": "^114.0.2",
+    "wdio-chromedriver-service": "^8.1.1"
+  }
+}
