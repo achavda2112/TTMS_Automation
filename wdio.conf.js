@@ -22,7 +22,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './tms-testsuite/specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
