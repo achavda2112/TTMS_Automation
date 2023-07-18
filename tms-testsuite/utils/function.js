@@ -1,0 +1,71 @@
+ 
+
+import * as logindata from "../login/loginTestData";
+import * as loginlocators from "../utils/locator";
+
+import * as userData from "../../utils/testData"
+
+import * as utilLocators from "../../utils/locator"
+
+
+async function waitAndClick(locator, time = 3000) {
+    // Wait for locator and click on it
+    await $(locator).waitForExist({ timeout: time });
+    await $(locator).click();
+    await browser.pause(2000);
+}
+
+async function waitAndFill(locator, data, time = 10000) {
+    // Wait for locator and add data in input fields
+    await $(locator).waitForExist({ timeout: time });
+    await $(locator).setValue(data);
+    await browser.pause(2000);
+}
+
+async function verifyText(locator, text) {
+    await $(locator).waitForExist();
+    await expect($(locator)).toHaveTextContaining(text);
+}
+
+async function verifySearch(locator, data) {
+    await $(locator).waitForExist();
+    await $(locator).setValue(data);
+    await browser.pause(2000);
+}
+
+async function login(username, password) {
+   
+    browser.maximizeWindow()
+      await browser.pause(2000)
+      await $(utilLocators.fields.username).waitForExist();
+      await $(utilLocators.fields.username).setValue(username)
+      await $(utilLocators.fields.password).setValue(password)
+      await $(utilLocators.button.login).click()
+}
+
+async function verifydashboard(username, password) {
+
+    await $(loginlocators.fields.logo).waitForExist();
+    await expect(browser).toHaveUrl('https://ttms-rewrite.nginxdev.egovja.com/dashboard')
+}
+
+
+async function navigateMenu(locator)
+{
+    await $('//*[span="Configuration"]').click()
+    await $(locator).waitForExist();
+    const elem = await $(locator);
+    // scroll to specific element
+    await elem.scrollIntoView();
+
+    await $(locator).click()
+    await $(locator).waitForExist();
+}
+
+export {
+    waitAndClick,
+    waitAndFill,
+    verifyText,
+    login,
+    navigateMenu
+    };
