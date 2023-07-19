@@ -7,6 +7,7 @@ module.exports = {
     fields: {
         parishName: "[data-test='parishName']",
         searchParish: "[data-test='parishSearch']",
-        parishCode: "[data-test='code']"
+        parishCode: "[data-test='code']",
+        tdname: 'td#parishName'
     }
 }

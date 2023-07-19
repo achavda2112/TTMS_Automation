@@ -7,6 +7,7 @@ import * as userData from "../../utils/testData"
 
 import * as utilLocators from "../../utils/locator"
 
+//Author: Hiren Kathiria
 
 async function waitAndClick(locator, time = 3000) {
     // Wait for locator and click on it
@@ -25,6 +26,7 @@ async function waitAndFill(locator, data, time = 10000) {
 async function verifyText(locator, text) {
     await $(locator).waitForExist();
     await expect($(locator)).toHaveTextContaining(text);
+    await browser.pause(2000);
 }
 
 async function verifySearch(locator, data) {
@@ -41,6 +43,7 @@ async function login(username, password) {
       await $(utilLocators.fields.username).setValue(username)
       await $(utilLocators.fields.password).setValue(password)
       await $(utilLocators.button.login).click()
+      await browser.pause(2000);
 }
 
 async function verifydashboard(username, password) {
@@ -60,6 +63,7 @@ async function navigateMenu(locator)
 
     await $(locator).click()
     await $(locator).waitForExist();
+    await browser.pause(2000);
 }
 
 export {
@@ -67,5 +71,7 @@ export {
     waitAndFill,
     verifyText,
     login,
-    navigateMenu
+    navigateMenu,
+    verifydashboard,
+    verifySearch
     };

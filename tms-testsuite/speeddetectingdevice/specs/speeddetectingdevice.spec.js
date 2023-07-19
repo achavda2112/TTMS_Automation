@@ -5,6 +5,7 @@ import * as userData from "../../utils/testData"
 import * as func from "../../utils/function"
 import * as utilLocators from "../../utils/locator"
 
+//Author: Hiren Kathiria
 
 describe('My Login application', () => {
 
@@ -16,35 +17,19 @@ describe('My Login application', () => {
 
   
   it('Add speed detecting device', async () => {
-    await $(locators.button.addDevice).waitForExist();
-    await $(locators.button.addDevice).click()
-    await $(locators.fields.description).waitForExist()
-    await $(locators.fields.description).setValue(speeddetectingdeviceTestData.description);
-    await $(locators.button.saveDevice).click()
-    await browser.pause(2000)
+    await func.waitAndClick(locators.button.addDevice, 3000);
+    await func.waitAndFill(locators.fields.description, speeddetectingdeviceTestData.description, 3000);
+    await func.waitAndClick(locators.button.saveDevice, 1000);
+    await func.verifySearch(locators.fields.searchDevice, speeddetectingdeviceTestData.description);
   })
 
 
   it('Edit speed detecting device', async () => {
-    await $(locators.fields.searchDevice).waitForExist();
-    await $(locators.fields.searchDevice).setValue(speeddetectingdeviceTestData.description);
-    await $(locators.button.editDevice).waitForExist()
-    await $(locators.button.editDevice).click()
-    await browser.pause(2000);
-
-    await $(locators.fields.description).waitForExist();
-    await $(locators.fields.description).setValue(speeddetectingdeviceTestData.editdescription);
-
-    await browser.pause(3000);
-    await browser.pause(2000)
-    await $(locators.button.saveDevice).click()
-    await $(locators.fields.description).waitForExist();
-    await $(locators.fields.description).setValue(speeddetectingdeviceTestData.editdescription);
-    await $(locators.button.editDevice).waitForExist();
-    const e = $(locators.fields.tddescription)
-    expect(e).toHaveValue(speeddetectingdeviceTestData.editdescription, { ignoreCase: false })
-        
-    await browser.pause(2000)
+    await func.verifySearch(locators.fields.searchDevice, speeddetectingdeviceTestData.description);
+    await func.waitAndClick(locators.button.editDevice, 3000);
+    await func.waitAndFill(locators.fields.description, speeddetectingdeviceTestData.editdescription, 3000);
+    await func.waitAndClick(locators.button.saveDevice, 1000);
+    await func.verifySearch(locators.fields.searchDevice, speeddetectingdeviceTestData.description);   
+    await func.verifyText(locators.fields.tddescription, speeddetectingdeviceTestData.description);
   })
-
 });
