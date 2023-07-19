@@ -5,6 +5,7 @@ import * as userData from "../../utils/testData"
 import * as func from "../../utils/function"
 import * as utilLocators from "../../utils/locator"
 
+//Author: Hiren Kathiria
 
 describe('My Login application', () => {
 
@@ -15,38 +16,18 @@ describe('My Login application', () => {
   });
   
   it('Add police rank', async () => {
-    await $(locators.button.addPolicerank).waitForExist();
-    await $(locators.button.addPolicerank).click()
-    await browser.pause(3000)
-    await $(locators.fields.policerankCode).waitForExist();
-    await $(locators.fields.policerankCode).setValue(policerankTestData.policerankCode);
-    await browser.pause(3000)   
-    await $(locators.fields.description).setValue(policerankTestData.policerankDescription);
-    await $(locators.button.savePolicerank).waitForExist()
-    await $(locators.button.savePolicerank).click()
-    await browser.pause(2000)
-   
-    await $(locators.fields.searchPolicerank).waitForExist();
-    await $(locators.fields.searchPolicerank).setValue(policerankTestData.policerankDescription);
-    await browser.pause(2000)
+    await func.waitAndClick(locators.button.addPolicerank, 3000);
+    await func.waitAndFill(locators.fields.policerankCode, policerankTestData.policerankCode, 3000);
+    await func.waitAndFill(locators.fields.description, policerankTestData.policerankDescription, 3000);
+    await func.waitAndClick(locators.button.savePolicerank, 1000);
+    await func.verifySearch(locators.fields.searchPolicerank, policerankTestData.policerankDescription);
   })
 
-  it('Edit police rank', async () => {
-    await $(locators.fields.searchPolicerank).waitForExist();
-    await $(locators.fields.searchPolicerank).setValue(policerankTestData.policerankDescription);
-    await browser.pause(2000)
-
-    await $(locators.button.editPolicerank).waitForExist()
-    await $(locators.button.editPolicerank).click()
-    await browser.pause(2000)
-    await $(locators.fields.description).waitForExist();
-    await $(locators.fields.description).setValue(policerankTestData.editpolicerankDescription);
-    await browser.pause(2000)
-    await $(locators.button.savePolicerank).click()
-    await $(locators.fields.searchPolicerank).waitForExist();
-    await $(locators.fields.searchPolicerank).setValue(policerankTestData.policerankDescription);
-    await $(locators.fields.policerankCode).waitForExist();
-    const e = $(locators.fields.policerankCode)
-    expect(e).toHaveValue(policerankTestData.policerankDescription, { ignoreCase: false })
-  })
+  it('Edit police rank', async () => {   
+    await func.verifySearch(locators.fields.searchPolicerank, policerankTestData.policerankDescription);
+    await func.waitAndClick(locators.button.editPolicerank, 3000);
+    await func.waitAndFill(locators.fields.description, policerankTestData.editpolicerankDescription, 3000);
+    await func.waitAndClick(locators.button.savePolicerank, 1000);
+    await func.verifySearch(locators.fields.searchPolicerank, policerankTestData.policerankDescription);   
+    })
 });

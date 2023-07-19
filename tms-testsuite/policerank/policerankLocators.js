@@ -7,6 +7,7 @@ module.exports = {
     fields: {
         policerankCode: "[data-test='code']",
         searchPolicerank: "[data-test='policeRankSearch']",
-        description: "[data-test='description']"
+        description: "[data-test='description']",
+        tddescription: 'td#description'
     }
 }
