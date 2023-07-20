@@ -17,6 +17,7 @@ module.exports = {
         speedDetectingDevice: '//*[@href="/master/speed-detecting-devices"]',
         verdict: '//*[@href="/master/verdict-master"]', 
         warrantType: '//*[@href="/master/warrant-type"]',
-        zone: '//*[@href="/master/zone-master"]'
+        zone: '//*[@href="/master/zone-master"]',
+        offendertype: '//*[@href="/master/offender-type"]'
     }
 }

@@ -5,6 +5,8 @@ import * as userData from "../../utils/testData"
 import * as func from "../../utils/function"
 import * as utilLocators from "../../utils/locator"
 
+//Author: Hiren Kathiria
+
 describe('My Login application', () => {
 
   before(async () => {
@@ -15,39 +17,18 @@ describe('My Login application', () => {
 
 
   it('Add zone', async () => {
-    await $(locators.button.addZone).waitForExist()
-    await $(locators.button.addZone).click()
-    await $(locators.fields.description).waitForExist();
-    await $(locators.fields.description).setValue(zoneTestData.description);
-    await $(locators.button.saveZone).waitForExist()
-    await $(locators.button.saveZone).click()
-    await browser.pause(2000)
-     
-    await $(locators.fields.searchZone).waitForExist();
-    await $(locators.fields.searchZone).setValue(zoneTestData.description);
-    await $(locators.fields.tddescription).waitForExist();
-    await browser.pause(2000)
+    await func.waitAndClick(locators.button.addZone, 3000);
+    await func.waitAndFill(locators.fields.description, zoneTestData.description, 3000);
+    await func.waitAndClick(locators.button.saveZone, 1000);
+    await func.verifySearch(locators.fields.searchZone, zoneTestData.description);   
   })
 
   it('Edit zone', async () => {
-    await $(locators.fields.searchZone).waitForExist();
-    await $(locators.fields.searchZone).setValue(zoneTestData.description);
-    await $(locators.fields.editZone).waitForExist()
-    await $(locators.fields.editZone).click()
-    await $(locators.fields.description).waitForExist();
-    await $(locators.fields.description).clearValue()
-    await $(locators.fields.description).setValue(zoneTestData.editdescription);
-         
-    await browser.pause(2000)
-    await $(locators.button.saveZone).click()
-    await $(locators.fields.searchZone).waitForExist();
-    await $(locators.fields.searchZone).setValue(zoneTestData.editdescription)
-    await $(locators.fields.tddescription).waitForExist();
-    const e = $(locators.fields.tddescription)
-    expect(e).toHaveValue(zoneTestData.editdescription, { ignoreCase: false })
-    
-    await $(locators.button.addZone).waitForExist();
-    await browser.pause(2000)
-   
-  })
+    await func.verifySearch(locators.fields.searchZone, zoneTestData.description);
+    await func.waitAndClick(locators.button.editZone, 3000);
+    await func.waitAndFill(locators.fields.description, zoneTestData.editdescription, 3000);
+    await func.waitAndClick(locators.button.saveZone, 1000);
+    await func.verifySearch(locators.fields.searchZone, zoneTestData.editdescription);   
+    await func.verifyText(locators.fields.tddescription, zoneTestData.editdescription);
+ }) 
 })
