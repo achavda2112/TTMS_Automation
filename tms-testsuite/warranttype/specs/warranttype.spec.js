@@ -6,6 +6,9 @@ import * as userData from "../../utils/testData"
 import * as func from "../../utils/function"
 import * as utilLocators from "../../utils/locator"
 
+
+//Author: Hiren Kathiria
+
 describe('My Login application', () => {
   
   before(async () => {
@@ -16,44 +19,21 @@ describe('My Login application', () => {
 
 
   it('Add verdict', async () => {
-    await $(locators.button.addWarranttype).waitForExist();
-    await $(locators.button.addWarranttype).click();
-    await $(locators.fields.cwarranttypeCodeode).waitForExist();
-    await $(locators.fields.warranttypeCode).setValue(warranttypeData.warranttypeCode);
-    await browser.pause(3000)
-    await $(locators.fields.description).setValue(warranttypeData.description);
-    warranttypedescription = await $(locators.fields.description).getValue()
-    await $(locators.fields.shortDescription).setValue(warranttypeData.shortDescription);
-    await $(locators.button.saveWarranttype).waitForExist()
-    await $(locators.button.saveWarranttype).click()
-    await browser.pause(2000)
-    
-    await $(locators.fields.searchWarranttype).waitForExist();
-    await $(locators.fields.searchWarranttype).setValue(warranttypeData.description);
-    
-    await browser.pause(2000)
+    await func.waitAndClick(locators.button.addWarranttype, 3000);
+    await func.waitAndFill(locators.fields.warranttypeCode, warranttypeData.warranttypeCode, 3000);
+    await func.waitAndFill(locators.fields.description, warranttypeData.description, 3000);
+    await func.waitAndClick(locators.button.saveWarranttype, 1000);
+    await func.verifySearch(locators.fields.searchWarranttype, warranttypeData.description);
   })
 
   it('Edit verdict', async () => {
-    await $(locators.fields.searchWarranttype).waitForExist();
-    await $(locators.fields.searchWarranttype).setValue(warranttype);
-    await $("[data-test='warrantTypeEdit']").waitForExist()
-    await $("[data-test='warrantTypeEdit']").click()
-    await $(locators.fields.description).waitForExist();
-    await $(locators.fields.description).setValue(warranttypeData.editdescription);
-    await $(locators.fields.shortDescription).setValue(warranttypeData.editshortDescription);
-    await browser.pause(2000)
-    await $(locators.button.saveWarranttype).click()
-    await $(locators.fields.searchWarranttype).waitForExist();
-    await $(locators.fields.searchWarranttype).setValue(warranttypeData.editdescription)
-
-    await $(locators.fields.tddescription).waitForExist();
-    const e = $(locators.fields.tddescription)
-    expect(e).toHaveValue(warranttypeData.editdescription, { ignoreCase: false })
-     
-    await $(locators.button.addWarranttype).waitForExist();
-    await browser.pause(2000)
-   
+    await func.verifySearch(locators.fields.searchWarranttype, warranttypeData.description);
+    await func.waitAndClick(locators.button.editWarranttype, 3000);
+    await func.waitAndFill(locators.fields.description, warranttypeData.editdescription, 3000);
+    await func.waitAndFill(locators.fields.shortDescription, warranttypeData.editshortDescription, 3000);
+    await func.waitAndClick(locators.button.saveWarranttype, 1000);
+    await func.verifySearch(locators.fields.searchWarranttype, warranttypeData.editdescription);   
+    await func.verifyText(locators.fields.tddescription, warranttypeData.editdescription);   
   })
 })
 
