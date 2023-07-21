@@ -28,6 +28,6 @@ describe('My Login application', () => {
     await func.waitAndClick(locators.button.editPolicerank, 3000);
     await func.waitAndFill(locators.fields.description, policerankTestData.editpolicerankDescription, 3000);
     await func.waitAndClick(locators.button.savePolicerank, 1000);
-    await func.verifySearch(locators.fields.searchPolicerank, policerankTestData.policerankDescription);   
+    await func.verifySearch(locators.fields.searchPolicerank, policerankTestData.editpolicerankDescription);   
     })
 });

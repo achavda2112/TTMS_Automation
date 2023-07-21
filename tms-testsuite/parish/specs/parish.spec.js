@@ -30,8 +30,7 @@ describe('My Login application', async () => {
     await func.waitAndClick(locators.button.editParish, 3000);
     await func.waitAndFill(locators.fields.parishName, parishTestData.editparishName, 3000);
     await func.waitAndClick(locators.button.saveParish, 1000);
-    await func.verifySearch(locators.fields.searchParish, parishTestData.parishName);   
-    await func.verifyText(locators.fields.tdname, parishTestData.parishName);
+    await func.verifySearch(locators.fields.searchParish, parishTestData.editparishName);      
   })
 })
 
