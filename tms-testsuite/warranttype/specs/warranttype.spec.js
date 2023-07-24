@@ -12,7 +12,7 @@ import * as utilLocators from "../../utils/locator"
 describe('My Login application', () => {
   
   before(async () => {
-    await func.login(userData.username, userData.password);
+    await func.login(utilLocators.menu.url, userData.username, userData.password);
     await func.navigateMenu(utilLocators.menu.warrantType);
     await $(locators.button.addWarranttype).waitForExist();
   });

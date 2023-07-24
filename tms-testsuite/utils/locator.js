@@ -12,6 +12,7 @@ module.exports = {
     menu: {        
         dashboard: 'https://ttms-rewrite.nginxdev.egovja.com/dashboard',
         url:"https://ttms-rewrite.nginxdev.egovja.com/login",
+        configuration: '//*[span="Configuration"]',
         parish: '//*[@href="/master/parish"]',
         policeRank: '//*[@href="/master/police-rank"]',
         speedDetectingDevice: '//*[@href="/master/speed-detecting-devices"]',

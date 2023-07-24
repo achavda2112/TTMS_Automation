@@ -35,9 +35,9 @@ async function verifySearch(locator, data) {
     await browser.pause(2000);
 }
 
-async function login(username, password) {
-   
-    browser.maximizeWindow()
+async function login(url, username, password) {
+      await browser.url(url)
+      browser.maximizeWindow()
       await browser.pause(2000)
       await $(utilLocators.fields.username).waitForExist();
       await $(utilLocators.fields.username).setValue(username)
@@ -46,16 +46,16 @@ async function login(username, password) {
       await browser.pause(2000);
 }
 
-async function verifydashboard(username, password) {
+async function verifydashboard( ) {
 
     await $(loginlocators.fields.logo).waitForExist();
-    await expect(browser).toHaveUrl('https://ttms-rewrite.nginxdev.egovja.com/dashboard')
+    await expect(browser).toHaveUrl(loginlocators.menu.dashboard)
 }
 
 
 async function navigateMenu(locator)
 {
-    await $('//*[span="Configuration"]').click()
+    await $(loginlocators.menu.configuration).click()
     await $(locator).waitForExist();
     const elem = await $(locator);
     // scroll to specific element
