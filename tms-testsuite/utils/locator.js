@@ -19,6 +19,8 @@ module.exports = {
         verdict: '//*[@href="/master/verdict-master"]', 
         warrantType: '//*[@href="/master/warrant-type"]',
         zone: '//*[@href="/master/zone-master"]',
-        offendertype: '//*[@href="/master/offender-type"]'
+        offendertype: '//*[@href="/master/offender-type"]',
+        actiontype: '//*[@href="/master/action-type"]',
+        country: '//*[@href="/master/country"]',
     }
 }

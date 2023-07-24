@@ -21,7 +21,7 @@ describe('My Login application', () => {
     await func.waitAndFill(locators.fields.verdictCode, verdictTestData.verdictCode, 3000);
     await func.waitAndFill(locators.fields.description, verdictTestData.verdictDescription, 3000);
     await func.waitAndClick(locators.button.saveVerdict, 1000);
-    await func.verifySearch(locators.fields.searchVerdict, verdictTestData.verdictDescription);
+    await func.verifyText(locators.fields.tddescription, verdictTestData.verdictDescription);
   })
 
   it('Edit verdict', async () => {
@@ -29,6 +29,6 @@ describe('My Login application', () => {
     await func.waitAndClick(locators.button.editVerdict, 3000);
     await func.waitAndFill(locators.fields.description, parishTestData.editparishName, 3000);
     await func.waitAndClick(locators.button.saveVerdict, 1000);
-    await func.verifySearch(locators.fields.searchVerdict, verdictTestData.editverdictDescription);   
+    await func.verifyText(locators.fields.tddescription, verdictTestData.editverdictDescription);   
   })
 })
