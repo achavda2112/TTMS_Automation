@@ -23,7 +23,7 @@ describe('My Login application', () => {
     await func.waitAndFill(locators.fields.warranttypeCode, warranttypeData.warranttypeCode, 3000);
     await func.waitAndFill(locators.fields.description, warranttypeData.description, 3000);
     await func.waitAndClick(locators.button.saveWarranttype, 1000);
-    await func.verifyText(locators.fields.tddescription, warranttypeData.description);
+    await func.verifySearch(locators.fields.searchWarranttype, warranttypeData.description);
   })
 
   it('Edit warranttype', async () => {
@@ -32,7 +32,7 @@ describe('My Login application', () => {
     await func.waitAndFill(locators.fields.description, warranttypeData.editdescription, 3000);
     await func.waitAndFill(locators.fields.shortDescription, warranttypeData.editshortDescription, 3000);
     await func.waitAndClick(locators.button.saveWarranttype, 1000);
-    await func.verifyText(locators.fields.tddescription, warranttypeData.editdescription); 
+    await func.verifySearch(locators.fields.searchWarranttype, warranttypeData.editshortDescription);
   })
 })
 

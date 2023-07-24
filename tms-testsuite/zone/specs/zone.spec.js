@@ -20,7 +20,7 @@ describe('My Login application', () => {
     await func.waitAndClick(locators.button.addZone, 3000);
     await func.waitAndFill(locators.fields.description, zoneTestData.description, 3000);
     await func.waitAndClick(locators.button.saveZone, 1000);
-    await func.verifyText(locators.fields.tddescription, zoneTestData.description);
+    await func.verifySearch(locators.fields.searchZone, zoneTestData.description);
   })
 
   it('Edit zone', async () => {
@@ -28,6 +28,6 @@ describe('My Login application', () => {
     await func.waitAndClick(locators.button.editZone, 3000);
     await func.waitAndFill(locators.fields.description, zoneTestData.editdescription, 3000);
     await func.waitAndClick(locators.button.saveZone, 1000);
-    await func.verifyText(locators.fields.tddescription, zoneTestData.editdescription);      
+    await func.verifySearch(locators.fields.searchZone, zoneTestData.editdescription);    
  }) 
 })

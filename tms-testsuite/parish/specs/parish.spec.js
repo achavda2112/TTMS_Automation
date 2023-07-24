@@ -22,7 +22,7 @@ describe('My Login application', async () => {
     await func.waitAndFill(locators.fields.parishCode, parishTestData.parishCode, 3000);
     await func.waitAndFill(locators.fields.parishName, parishTestData.parishName, 3000);
     await func.waitAndClick(locators.button.saveParish, 1000);
-    await func.verifyText(locators.fields.tddescription, parishTestData.editparishName);
+    await func.verifySearch(locators.fields.searchParish, parishTestData.parishName);
   })
 
   it('Edit parish', async () => {
@@ -30,7 +30,7 @@ describe('My Login application', async () => {
     await func.waitAndClick(locators.button.editParish, 3000);
     await func.waitAndFill(locators.fields.parishName, parishTestData.editparishName, 3000);
     await func.waitAndClick(locators.button.saveParish, 1000);
-    await func.verifyText(locators.fields.tdname, parishTestData.editparishName);   
+    await func.verifySearch(locators.fields.searchParish, parishTestData.editparishName);   
   })
 })
 

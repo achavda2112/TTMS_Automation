@@ -21,7 +21,7 @@ describe('My Login application', () => {
     await func.waitAndFill(locators.fields.countryCode, countryTestData.countryCode, 3000);
     await func.waitAndFill(locators.fields.name, countryTestData.countryDescription, 3000);
     await func.waitAndClick(locators.button.saveCountry, 1000);    
-    await func.verifyText(locators.fields.tddescription, countryTestData.countryDescription);
+    await func.verifySearch(locators.fields.searchCountry, countryTestData.countryDescription);
   })
 
   it('Edit verdict', async () => {
@@ -29,6 +29,6 @@ describe('My Login application', () => {
     await func.waitAndClick(locators.button.editCountry, 3000);
     await func.waitAndFill(locators.fields.name, countryTestData.editcountryDescription, 3000);
     await func.waitAndClick(locators.button.saveCountry, 1000);
-    await func.verifyText(locators.fields.tddescription, countryTestData.editcountryDescription); 
+    await func.verifySearch(locators.fields.searchCountry, countryTestData.editcountryDescription);
    })
 })

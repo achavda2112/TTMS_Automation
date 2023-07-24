@@ -20,7 +20,7 @@ describe('My Login application', () => {
     await func.waitAndClick(locators.button.addDevice, 3000);
     await func.waitAndFill(locators.fields.description, speeddetectingdeviceTestData.description, 3000);
     await func.waitAndClick(locators.button.saveDevice, 1000);
-    await func.verifyText(locators.fields.tddescription, speeddetectingdeviceTestData.editdescription);
+    await func.verifySearch(locators.fields.searchDevice, speeddetectingdeviceTestData.description);
   })
 
 
@@ -29,6 +29,6 @@ describe('My Login application', () => {
     await func.waitAndClick(locators.button.editDevice, 3000);
     await func.waitAndFill(locators.fields.description, speeddetectingdeviceTestData.editdescription, 3000);
     await func.waitAndClick(locators.button.saveDevice, 1000);
-    await func.verifyText(locators.fields.tddescription, speeddetectingdeviceTestData.editdescription);  
+    await func.verifySearch(locators.fields.searchDevice, speeddetectingdeviceTestData.editdescription);
   })
 });

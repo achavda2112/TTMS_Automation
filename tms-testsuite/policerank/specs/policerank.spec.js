@@ -20,7 +20,7 @@ describe('My Login application', () => {
     await func.waitAndFill(locators.fields.policerankCode, policerankTestData.policerankCode, 3000);
     await func.waitAndFill(locators.fields.description, policerankTestData.policerankDescription, 3000);
     await func.waitAndClick(locators.button.savePolicerank, 1000);
-    await func.verifyText(locators.fields.tddescription, policerankTestData.policerankDescription);
+    await func.verifySearch(locators.fields.searchPolicerank, policerankTestData.policerankDescription);
   })
 
   it('Edit police rank', async () => {   
@@ -28,6 +28,6 @@ describe('My Login application', () => {
     await func.waitAndClick(locators.button.editPolicerank, 3000);
     await func.waitAndFill(locators.fields.description, policerankTestData.editpolicerankDescription, 3000);
     await func.waitAndClick(locators.button.savePolicerank, 1000);
-    await func.verifyText(locators.fields.tddescription, policerankTestData.editpolicerankDescription);   
+    await func.verifySearch(locators.fields.searchPolicerank, policerankTestData.editpolicerankDescription);  
     })
 });

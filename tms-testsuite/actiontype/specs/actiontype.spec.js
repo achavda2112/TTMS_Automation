@@ -20,7 +20,7 @@ describe('My Login application', () => {
     await func.waitAndFill(locators.fields.actiontypecode, actiontypeTestData.actionTypeCode, 3000);
     await func.waitAndFill(locators.fields.description, actiontypeTestData.actionTypeDescription, 3000);
     await func.waitAndClick(locators.button.saveActiontype, 1000);
-    await func.verifyText(locators.fields.tddescription, actiontypeTestData.actionTypeDescription);
+    await func.verifySearch(locators.fields.searchActiontype, actiontypeTestData.actionTypeDescription);
   })
 
   it('Edit actiontype', async () => {   
@@ -28,6 +28,6 @@ describe('My Login application', () => {
     await func.waitAndClick(locators.button.editActiontype, 3000);
     await func.waitAndFill(locators.fields.description, actiontypeTestData.editactionTypeDescription, 3000);
     await func.waitAndClick(locators.button.saveActiontype, 1000);
-    await func.verifyText(locators.fields.tddescription, actiontypeTestData.editactionTypeDescription);
+    await func.verifySearch(locators.fields.searchActiontype, actiontypeTestData.editactionTypeDescription);
   })
 });
