@@ -1,11 +1,7 @@
  
 
-import * as logindata from "../login/loginTestData";
-import * as loginlocators from "../utils/locator";
 
-import * as userData from "../../utils/testData"
-
-import * as utilLocators from "../../utils/locator"
+import * as utilLocators from "../utils/locator"
 
 //Author: Hiren Kathiria
 
@@ -37,25 +33,27 @@ async function verifySearch(locator, data) {
 
 async function login(url, username, password) {
       await browser.url(url)
-      browser.maximizeWindow()
+      await browser.maximizeWindow()
       await browser.pause(2000)
       await $(utilLocators.fields.username).waitForExist();
       await $(utilLocators.fields.username).setValue(username)
+      await browser.pause(2000)
       await $(utilLocators.fields.password).setValue(password)
+      await $(utilLocators.button.login).waitForExist();
       await $(utilLocators.button.login).click()
       await browser.pause(2000);
 }
 
 async function verifydashboard( ) {
 
-    await $(loginlocators.fields.logo).waitForExist();
-    await expect(browser).toHaveUrl(loginlocators.menu.dashboard)
+    await $(utilLocators.fields.logo).waitForExist();
+    await expect(browser).toHaveUrl(utilLocators.menu.dashboard)
 }
 
 
 async function navigateMenu(locator)
 {
-    await $(loginlocators.menu.configuration).click()
+    await $(utilLocators.menu.configuration).click()
     await $(locator).waitForExist();
     const elem = await $(locator);
     // scroll to specific element

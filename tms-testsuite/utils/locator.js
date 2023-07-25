@@ -5,7 +5,7 @@ module.exports = {
 
     fields: {
         username: "[data-test='username']",
-        password: "[data-test='password']",        
+        password: "[data-test='password'] input",        
         logo: "#layout-menu-logo",
     },
 
