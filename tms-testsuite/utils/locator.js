@@ -22,5 +22,9 @@ module.exports = {
         offendertype: '//*[@href="/master/offender-type"]',
         actiontype: '//*[@href="/master/action-type"]',
         country: '//*[@href="/master/country"]',
+        event: '//*[@href="/master/event"]',
+        courthearingtype: '//*[@href="/master/court-hear-type"]',
+        driverslicense: '//*[@href="/master/driver-licence"]',     
+        eventreftype: '//*[@href="/master/event-ref-type"]',     
     }
 }

@@ -53,6 +53,7 @@ async function verifydashboard( ) {
 
 async function navigateMenu(locator)
 {
+    await $(utilLocators.menu.configuration).waitForExist()
     await $(utilLocators.menu.configuration).click()
     await $(locator).waitForExist();
     const elem = await $(locator);
