@@ -26,5 +26,7 @@ module.exports = {
         courthearingtype: '//*[@href="/master/court-hear-type"]',
         driverslicense: '//*[@href="/master/driver-licence"]',     
         eventreftype: '//*[@href="/master/event-ref-type"]',     
+        mechanicaldefecttype: '//*[@href="/master/mechanical-defect-type"]',
+        organizationcategory: '//*[@href="/master/organization-category"]', 
     }
 }
