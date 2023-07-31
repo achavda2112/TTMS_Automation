@@ -28,5 +28,8 @@ module.exports = {
         eventreftype: '//*[@href="/master/event-ref-type"]',     
         mechanicaldefecttype: '//*[@href="/master/mechanical-defect-type"]',
         organizationcategory: '//*[@href="/master/organization-category"]', 
+        vehicleColor: '//*[@href="/master/vehicle-color"]',
+        vehicleMake: '//*[@href="/master/vehicle-make"]',
+        vehicleType: '//*[@href="/master/vehicle-type"]',
     }
 }

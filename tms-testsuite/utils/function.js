@@ -59,7 +59,7 @@ async function navigateMenu(locator)
     const elem = await $(locator);
     // scroll to specific element
     await elem.scrollIntoView();
-
+    await elem.scrollIntoView(); // added this as vehicle color submenu was not identified
     await $(locator).click()
     await $(locator).waitForExist();
     await browser.pause(2000);
