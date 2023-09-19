@@ -1,0 +1,20 @@
+module.exports = {
+    organizationLocationname: "Ticket Name1",
+    ShortDescription: "Ticket Test",
+    eticketprefix: "EE",
+    eticketlength: "5",
+    mark: "Mark 1",
+    streetNumber: "Street no 7",
+    streetName: "Street 1",
+    postalLocation: "15",
+    poBox: "Box 1",
+    city: "Gandhinagar",
+    phone1: "1234567890",
+    phone2: "9876543210",
+    fax: "8529637410",
+    emailAddress: "abc@gmail.com",
+    description: "Organization Location added",
+    descriptionUpdated: "Organization Location updated",
+    contactPerson: "User1",
+    
+}

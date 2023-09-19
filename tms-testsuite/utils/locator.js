@@ -7,12 +7,15 @@ module.exports = {
         username: "[data-test='username']",
         password: "[data-test='password'] input",        
         logo: "#layout-menu-logo",
+        uniqueCode: "[data-test='codeErrorRequired']"
     },
 
     menu: {        
-        dashboard: 'https://ttms-rewrite.nginxdev.egovja.com/dashboard',
-        url:"https://ttms-rewrite.nginxdev.egovja.com/login",
+        dashboard: '/dashboard',
+        url:'/login',
         configuration: '//*[span="Configuration"]',
+        security: '//*[span="Security"]',
+        ticketProcessing1 : '(//li[@app-menuitem]//a[.//*[contains(text(),"Ticket Processing")]])[1]',
         parish: '//*[@href="/master/parish"]',
         policeRank: '//*[@href="/master/police-rank"]',
         speedDetectingDevice: '//*[@href="/master/speed-detecting-devices"]',
@@ -31,5 +34,19 @@ module.exports = {
         vehicleColor: '//*[@href="/master/vehicle-color"]',
         vehicleMake: '//*[@href="/master/vehicle-make"]',
         vehicleType: '//*[@href="/master/vehicle-type"]',
+        location: '//*[@href="/master/location-master"]', 
+        idType: '//*[@href="/master/list-id-type"]',
+        offenceType: '//*[@href="/master/list-offence"]',
+        organization: '//*[@href="/master/organization"]',
+        reasonType : '//*[@href="/master/list-reason"]',
+        ticketType : '//*[@href="/master/list-ticket-type"]',
+        action: '//*[@href="/master/action"]',
+        courtRuling: '//*[@href="/master/court-ruling"]',
+        organizationType: '//*[@href="/master/organization-type"]',
+        organizationLocation: '//*[@href="/master/list-organization-location"]',
+        organizationStructure: '//*[@href="/master/list-organization-structure"]',
+        groupMaintenance1: '//*[@href="/security/group/list-group"]',
+        userMaintenance1: '//*[@href="/security/user/list-users"]',
+        issueEticket1: '//*[@href="/ticket-generation/issue"]',
     }
 }

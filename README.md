@@ -25,4 +25,4 @@ npm install @wdio/cli
 npx wdio config
 
 ## Authors and acknowledgment
-Hiren Kathiria 
+
