@@ -1,6 +1,6 @@
 module.exports = {
    
-    //namegroupMaintenance: "Test QA11",
+    namegroupMaintenance: "QA11",
     descriptionnamegroupMaintenance: "Description added",
     editgroupMaintenanceDescription: "Test edit QA1"
 }

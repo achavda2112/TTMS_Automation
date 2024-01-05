@@ -20,17 +20,25 @@ describe('My Login application', () => {
   
   it('Add Action', async () => {
     await func.waitAndClick(locators.button.addAction1, 3000);
-    const result = await func.setUniqueValue(locators.fields.actioncode, locators.fields.errorCode,true, 2);
+    result = await func.setUniqueValue(locators.fields.actioncode, locators.fields.errorCode,true, 2);
     console.log("-----------Result---------",result);
-    await func.selectDropdown(locators.fields.actionType, 3, locators.fields.valueSelect);
+    await func.selectDropdown(locators.fields.actionType, 1, locators.fields.valueSelect);
     await func.waitAndFill(locators.fields.description, actionTestData.actionDescription, 3000);
     await func.waitAndClick(locators.button.saveAction, 1000);
-   await func.verifySearch(locators.fields.searchAction, result);
+    await func.verifySearch(locators.fields.searchAction, result);
   })
 
   it('Edit Action', async () => {   
     await func.waitAndClick(locators.button.editAction, 3000);
-    await func.selectDropdown(locators.fields.actionType, 4, locators.fields.valueSelect);
+    await func.waitAndFill(locators.fields.description, actionTestData.actionDescriptionEdit, 3000);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect);
     await func.waitAndClick(locators.button.saveAction, 1000);
+    await func.verifySearch(locators.fields.searchAction, result);
   })
-});
+
+  it('Inactive Status', async ()=> {
+    await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+    await func.waitAndClick(locators.fields.acceptAlert, 3000);
+  })
+  
+}); 

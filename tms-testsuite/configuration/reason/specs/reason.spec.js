@@ -30,6 +30,12 @@ describe('My Login application', () => {
   it('Edit Reason', async () => {   
     await func.waitAndClick(locators.button.editReason, 3000);
     await func.selectDropdown(locators.fields.reason1, 4, locators.fields.valueSelect);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect);
     await func.waitAndClick(locators.button.saveReason, 1000);
+  })
+  it('Inactive Status', async ()=> {
+    await func.verifySearch(locators.fields.searchidtype, result);
+    await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+    await func.waitAndClick(locators.fields.acceptAlert, 3000);
   })
 });

@@ -20,21 +20,30 @@ describe('My Login application', () => {
   it('Add Organization Structure', async () => {
     await func.waitAndClick(locators.button.addorganizationStructure, 3000);
     await func.selectDropdown(locators.fields.organization, 3, locators.fields.selectOrganization);
-    await func.selectDropdown(locators.fields.level, 2, locators.fields.selectLevel);
-    const result = await func.setUniqueValue(locators.fields.organizationStructurecode, locators.fields.errorCode,5);
+    await func.selectDropdown(locators.fields.level, 4, locators.fields.selectLevel);
+    await func.selectDropdown(locators.fields.parentMasterValue, 2, locators.fields.selectLevel1);
+    result = await func.setUniqueValue(locators.fields.organizationStructurecode, locators.fields.errorCode,5);
     console.log("-----------Result---------",result);
     await func.waitAndFill(locators.fields.name, organizationStructureTestData.name, 3000);
     await func.waitAndClick(locators.button.saveorganizationStructure, 3000);
-   // await func.verifySearch(locators.fields.searchorganizationStructurecode, result);
   })
 
   it('Edit Organization Structure', async () => {   
     await func.selectDropdown(locators.fields.organization, 3, locators.fields.selectOrganization);
-    await func.selectDropdown(locators.fields.level, 2, locators.fields.selectLevel);
-    await func.waitAndClick(locators.button.applyFilter, 3000);
+    await func.selectDropdown(locators.fields.LevelDropdown, 4, locators.fields.selectLevel1);
+    await func.waitAndClick(locators.button.applyFilter, 1000);
     await func.verifySearch(locators.fields.searchorganizationStructurecode, result);
-    await func.waitAndClick(locators.button.editorganizationStructure, 3000);
-    await func.waitAndFill(locators.fields.name, organizationStructureTestData.updateName, 3000);
+    await func.waitAndClick(locators.button.editorganizationStructure, 1000);
+    await func.waitAndFill(locators.fields.name, organizationStructureTestData.updateName, 1000);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect);
     await func.waitAndClick(locators.button.saveorganizationStructure, 1000);
+  })
+  it('Inactive Status', async ()=> {
+    await func.selectDropdown(locators.fields.organization, 3, locators.fields.selectOrganization);
+    await func.selectDropdown(locators.fields.LevelDropdown, 4, locators.fields.selectLevel);
+    await func.waitAndClick(locators.button.applyFilter, 1000);
+    await func.verifySearch(locators.fields.searchorganizationStructurecode, result);
+    await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+    await func.waitAndClick(locators.fields.acceptAlert, 3000);
   })
 });

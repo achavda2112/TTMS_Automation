@@ -7,6 +7,7 @@ import * as utilLocators from "../../../utils/locator"
 
 
 describe('My Login application', async () => {
+  let result;
 
   before(async () => {
     await func.login(utilLocators.menu.url, userData.username, userData.password);
@@ -19,16 +20,22 @@ describe('My Login application', async () => {
   
   it('Add vehicle color', async () => {
     await func.waitAndClick(locators.button.addVehicleColor, 3000);
-    await func.waitAndFill(locators.fields.vehicleColorCode, vehiclecolorTestData.vehicleCode, 3000);
+    result = await func.setUniqueValue(locators.fields.vehicleColorCode, locators.fields.errorCode,6);
+    console.log("-----------Result---------",result);
     await func.waitAndFill(locators.fields.vehicleColorDescription, vehiclecolorTestData.description, 3000);
     await func.waitAndClick(locators.button.saveVehicleColor, 1000);
-    await func.verifySearch(locators.fields.searchVehicleColor, vehiclecolorTestData.description);
-  })
+    await func.verifySearch(locators.fields.searchVehicleColor, result);  })
 
   it('Edit vehicle color', async () => {
     await func.waitAndClick(locators.button.editVehicleColor, 3000);
     await func.waitAndFill(locators.fields.vehicleColorDescription, vehiclecolorTestData.editdescription, 3000);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect);
     await func.waitAndClick(locators.button.saveVehicleColor, 1000);
+  })
+  it('Inactive Status', async ()=> {
+    await func.verifySearch(locators.fields.searchVehicleColor, result);
+    await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+    await func.waitAndClick(locators.fields.acceptAlert, 3000);
   })
 })
 

@@ -29,10 +29,19 @@ describe('My Login application', () => {
     await func.waitAndClick(locators.button.savecourtRuling, 1000);
     await func.verifySearch(locators.fields.searchcourtRuling, result);
   })
-
+ 
   it('Edit Court Ruling', async () => {   
     await func.waitAndClick(locators.button.editcourtRuling, 3000);
     await func.selectDropdown(locators.fields.reason1, 4, locators.fields.valueSelect);
+    await func.waitAndClick(locators.fields.applicableProperties1, 3000);
+    await func.waitAndClick(locators.fields.applicableProperties2, 3000);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect);
     await func.waitAndClick(locators.button.savecourtRuling, 1000);
+  }) 
+
+  it('Inactive Status', async ()=> {
+    await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+    await func.waitAndClick(locators.fields.acceptAlert, 3000);
   })
+
 });

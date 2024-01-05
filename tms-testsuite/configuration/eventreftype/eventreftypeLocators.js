@@ -10,6 +10,10 @@ module.exports = {
         eventreftypeLabel: "[data-test='label']",
         description: "[data-test='description']",
         tddescription: 'td#description',
-        errorCode: "[data-test='codeErrorRequired']"
+        errorCode: "[data-test='codeErrorRequired']",
+        statusType: "[data-test='status']",
+        inactiveStatus: "//*[@id='status']/p-inputswitch/div/span",
+        valueSelect: "//ul[contains(@class, 'p-dropdown-items')]",
+        acceptAlert: "//button[@data-test='okDialog']"
     }
 }

@@ -8,6 +8,11 @@ module.exports = {
         organizationcategoryDescription: "[data-test='description']",
         searchOrganizationcategory: "[data-test='organizationCategorySearch']",
         organizationcategoryCode: "[data-test='code']",
-        tddescription: 'td#description'
+        tddescription: 'td#description',
+        errorCode: "[data-test='codeErrorRequired']",
+        statusType: "[data-test='status']",
+        inactiveStatus: "//*[@id='status']/p-inputswitch/div/span",
+        valueSelect: "//ul[contains(@class, 'p-dropdown-items')]",
+        acceptAlert: "//button[@data-test='okDialog']",
     }
 }

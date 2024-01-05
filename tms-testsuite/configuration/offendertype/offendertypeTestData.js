@@ -1,4 +1,4 @@
 module.exports = {
-    offenderTypeDescription: "Test",
-    editoffenderTypeDescription: "Test edit"
+    offenderTypeDescription: "Check",
+    editoffenderTypeDescription: "Check edit"
 }

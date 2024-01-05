@@ -14,6 +14,10 @@ module.exports = {
         organizationTypelabeltext: "[data-test='organizationTypeLabelText']",
         name: "[data-test='name']",
         tddescription: 'td#description',
-        errorCode: "[data-test='codeErrorRequired']"
+        errorCode: "[data-test='codeErrorRequired']",
+        statusType: "[data-test='status']",
+        inactiveStatus: "//*[@id='status']/p-inputswitch/div/span",
+        valueSelect: "//ul[contains(@class, 'p-dropdown-items')]",
+        acceptAlert: "//button[@label='Ok']"
     }
 }

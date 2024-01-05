@@ -32,6 +32,13 @@ describe('My Login application', () => {
   it('Edit Country', async () => {
     await func.waitAndClick(locators.button.editCountry, 3000);
     await func.waitAndFill(locators.fields.name, countryTestData.editcountryDescription, 3000);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect);
     await func.waitAndClick(locators.button.saveCountry, 1000);
+    
+  }) 
+  it('Inactive Status', async ()=> {
+    await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+    await func.waitAndClick(locators.fields.acceptAlert, 3000);
   })
+
 })

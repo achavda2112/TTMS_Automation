@@ -2,7 +2,8 @@
 
 
 import * as utilLocators from "../utils/locator"
-
+import { Key } from 'webdriverio'
+import fs from 'fs'
 
 
 async function waitAndClick(locator, time = 3000) {
@@ -14,14 +15,44 @@ async function waitAndClick(locator, time = 3000) {
 
 async function waitAndFill(locator, data, time = 10000, ignoreDisabled = false) {
     // Wait for locator and add data in input fields
-    if(ignoreDisabled && !await $(locator).isEnabled()){
+    if (ignoreDisabled && !await $(locator).isEnabled()) {
         return;
     }
-    await $(locator).waitForExist({ timeout: time });    
+    await $(locator).waitForExist({ timeout: time });
     await $(locator).click();
-    await $(locator).setValue(data);    
+    await $(locator).setValue(data);
     await browser.pause(2000);
-}    
+}
+
+async function waitAndFillWithMore(locator, data, time = 10000, ignoreDisabled = false) {
+    if (ignoreDisabled && !await $(locator).isEnabled()) {
+        return;
+    }
+    await $(locator).waitForExist({ timeout: time });
+    await $(locator).click();
+    await browser.pause(2000);
+    await browser.keys([Key.Escape]);
+    await browser.pause(2000);
+    await $(locator).setValue(data);
+    await browser.pause(2000);
+}
+
+async function waitAndClear(locator, count, time = 10000, ignoreDisabled = false) {
+    // Wait for locator and add data in input fields
+    if (ignoreDisabled && !await $(locator).isEnabled()) {
+        return;
+    }
+    await $(locator).waitForExist({ timeout: time });
+    await $(locator).click();
+    for (let i = 0; i < count; i++) {
+        await browser.keys([Key.ArrowRight]);
+    }
+    for (let i = 0; i < count; i++) {
+        await browser.keys(['Back space']);
+    }
+    await browser.pause(2000);
+}
+
 
 async function verifyText(locator, text) {
     await $(locator).waitForExist();
@@ -49,53 +80,91 @@ async function login(url, username, password) {
     await browser.pause(2000);
 }
 
+async function isLoadingPanelVisible() {
+    const loadingPanel = $(".spinner-overlay");
+    return loadingPanel.isVisible();
+}
+async function waitForLoader() {
+    const timeout = 80000; // Adjust the timeout as needed
+    await browser.waitUntil(
+        () => !!!isLoadingPanelVisible(),
+        {
+            timeout,
+            timeoutMsg: 'Loading panel is still visible after waiting'
+        }
+    );
+}
 
-async function selectDropdown(locator, optionIndex, optionsLocator) {
+async function waitForLoaderAndClickNextField() {
+    const timeout = 80000; // Adjust the timeout as needed
+    await browser.waitUntil(
+        () => !!!isLoadingPanelVisible(),
+        {
+            timeout,
+            timeoutMsg: 'Loading panel is still visible after waiting'
+        }
+    );
+
+    // await waitForLoaderAndClickNextField();
+}
+
+
+
+async function selectDropdown(locator, optionIndex, optionsLocator, ignoreDisabled = false) {
+
+    if (ignoreDisabled && await $(`${locator}//div[contains(@class,'p-disabled')]`).isExisting()) {
+        return;
+    }
     await waitAndClick(locator, 4000);
-    if(!optionsLocator){
+
+    if (!optionsLocator) {
         await waitAndClick(`${locator}//p-dropdownitem[${optionIndex}]`, 4000);
-    }else{
+    } else {
         await waitAndClick(`${optionsLocator}//p-dropdownitem[${optionIndex}]`, 4000);
     }
-    
+
 }
 async function multiselectDropdown(locator) {
     const checkbox_two = $(locator);
     //await checkbox_two.scrollIntoView();
     await browser.pause(3000);
     await checkbox_two.click();
-    await browser.pause(4000);
+    await browser.pause(2000);
 }
 
-async function selectDate(locator, date) {
+async function selectDate(locator, date, ignoreDisabled = false) {
     const datepickerTrigger = $(locator);
+
+    if (ignoreDisabled && await $(`${locator}//span[contains(@class,'p-calendar-disabled')]`).isExisting()) {
+        return;
+    }
     await datepickerTrigger.click();
-    
+
     //select year
     await $("//button[contains(@class,'p-datepicker-year')]").click();
     await $("//div[contains(@class,'p-yearpicker')]//span[text()=" + date.getFullYear() + "]").click();
     //select month
     await $("//div[contains(@class,'p-monthpicker')]//span[text()=' " + date.toLocaleString('default', { month: 'short' }).slice(0, 3) + " ']").click();
     //select date
-    const dateToSelect = $(locator + '//span[text()=' + date.getDate() + '][1]');    
-    await dateToSelect.click();
-    
-        await browser.pause(4000);
-       // assert.equal(inputField.getValue(), valueToEnter, 'Input value should match what was entered');
-} 
-     
+    console.log('date check: ' + date.getDate())
+    const dateToSelect = $(locator + '//span[text()=' + date.getDate() + '][1]');
+    console.log('path for date seect : ' + dateToSelect)
 
+    await dateToSelect.click();
+
+    await browser.pause(4000);
+}
 
 async function verifydashboard() {
 
     await $(utilLocators.fields.logo).waitForExist();
-    await expect(browser).toHaveUrl(utilLocators.menu.dashboard)
+    await expect(browser).toHaveUrl(utilLocators.menu.dashboard);
 }
 
 
 async function navigateMenu(locator) {
-   // await $(utilLocators.menu.configuration).waitForExist()
-   // await $(utilLocators.menu.configuration).click()
+    // await $(utilLocators.menu.configuration).waitForExist()
+    // await $(utilLocators.menu.configuration).click()
     await $(locator).waitForExist();
     const elem = await $(locator);
     // scroll to specific element
@@ -119,25 +188,68 @@ async function generateRandomValue(length, isNumber = false) {
     return result;
 }
 
+// Example usage:
+//     sequentialNumbers = await generateSequentialNumber('MT200', 5);
+// console.log(sequentialNumbers);
+
+
 async function setUniqueValue(locator, errorLocator, isNumber = false, length = 3) {
-    let result = await generateRandomValue(length, isNumber);    
+    let result = await generateRandomValue(length, isNumber);
     await waitAndFill(locator, result);
     await browser.keys(['Tab']);
     const isDisplayed = await $(errorLocator).isDisplayed({ timeout: 3000 });
+    console.log("---HERE---", result);
     if (isDisplayed) {
         return await setUniqueValue(locator, errorLocator, isNumber, length);
     }
     return result;
 }
-async function generateUniqueEmail(locator)
-{
-    const baseEmail = 'example.email+'; // Base email address without the domain
+
+async function setUniqueValue2(locator, errorLocator, isNumber = false) {
+    let data = 1
+    try {
+        data = parseInt(fs.readFileSync("newuser.txt", { encoding: 'utf8', flag: 'r' })) + 1;
+        fs.writeFileSync("newuser.txt", data.toString());
+    } catch (error) {
+        fs.writeFileSync("newuser.txt", "2");
+    }
+    const result = "User+" + data.toString()
+    await waitAndFill(locator, result);
+    await browser.keys(['Tab']);
+    const isDisplayed = await $(errorLocator).isDisplayed({ timeout: 3000 });
+    console.log("---HERE---", result);
+    if (isDisplayed) {
+        return await generateSequentialNumber('User+1');
+    }
+    return result;
+}
+
+async function setUniqueValue1(locator, errorLocator, length = 5) {
+    let data = 202
+    try {
+        data = parseInt(fs.readFileSync("sequential.txt", { encoding: 'utf8', flag: 'r' })) + 1;
+        fs.writeFileSync("sequential.txt", data.toString());
+    } catch (error) {
+        fs.writeFileSync("sequential.txt", "202");
+    }
+    const result = "MT" + data.toString()
+    await waitAndFill(locator, result);
+    await browser.keys(['Tab']);
+    const isDisplayed = await $(errorLocator).isDisplayed({ timeout: 3000 });
+    console.log("---HERE---", result);
+    if (isDisplayed) {
+        return await generateSequentialNumber('MT200', length);
+    }
+    return result;
+}
+
+async function generateUniqueEmail(locator) {
+    const baseEmail = 'TestUser+1'; // Base email address without the domain
     const domain = 'example.com'; // Domain part of the email address
     const timestamp = new Date().getTime(); // Current timestamp
     const uniqueEmail = `${baseEmail}${timestamp}@${domain}`;
-    const inputField = $(locator); 
+    const inputField = $(locator);
     await waitAndFill(locator, uniqueEmail);
-
 }
 
 
@@ -162,7 +274,9 @@ async function setNumbervalue(locator, data, time = 10000) {
 
 export {
     waitAndClick,
-    waitAndFill,    
+    waitForLoaderAndClickNextField,
+    waitAndFill,
+    waitAndClear,
     verifyText,
     login,
     navigateMenu,
@@ -171,9 +285,13 @@ export {
     selectDropdown,
     generateRandomValue,
     setUniqueValue,
+    setUniqueValue1,
     radioButton,
     setNumbervalue,
     multiselectDropdown,
     selectDate,
-    generateUniqueEmail
+    generateUniqueEmail,
+    waitForLoader,
+    waitAndFillWithMore,
+    setUniqueValue2
 };

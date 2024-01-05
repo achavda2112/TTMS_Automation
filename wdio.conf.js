@@ -22,7 +22,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './tms-testsuite/**/specs/*.js'
+        './tms-testsuite/suspension/surrenderingOfDriversLicense/specs/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -99,7 +99,7 @@ exports.config = {
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
-    connectionRetryTimeout: 120000,
+    connectionRetryTimeout: 500000,
     //
     // Default request retries count
     connectionRetryCount: 3,
@@ -138,7 +138,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 500000
     },
     //
     // =====
@@ -216,8 +216,22 @@ exports.config = {
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
      */
-    // beforeHook: function (test, context) {
-    // },
+    beforeHook: function (test, context) {
+        // wdio.conf.js
+
+    exports.config = {
+    // other configuration settings...
+
+    before: function (capabilities, specs) {
+        // Add a custom command to close the current tab
+        browser.addCommand('closeCurrentTab', function () {
+            return this.closeWindow();
+        });
+    },
+};
+
+    },
+    
     /**
      * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
      * afterEach in Mocha)

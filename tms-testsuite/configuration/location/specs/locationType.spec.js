@@ -27,7 +27,13 @@ describe('My Login application', () => {
  it('Edit Location', async () => {   
     await func.waitAndClick(locators.button.editlocationtype, 3000);
     await func.waitAndFill(locators.fields.description, locationTestData.editlocationDescription, 3000);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect); 
     await func.waitAndClick(locators.button.savelocationtype, 1000);
 });
 
+ it('Inactive Status', async ()=> {
+  await func.verifySearch(locators.fields.searchlocationtype, locationTestData.editlocationDescription);
+  await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+  await func.waitAndClick(locators.fields.acceptAlert, 3000);
+})
 });

@@ -14,7 +14,16 @@ module.exports = {
         addnewRow: "[title='Add New Row']",
         levelone: "//div[@ng-reflect-name='0']//input[@data-test='levelName']",
         leveltwo: "//div[@ng-reflect-name='1']//input[@data-test='levelName']",
+        levelthree: "//div[@ng-reflect-name='2']//input[@data-test='levelName']",
+        level1Edit: "//div[@ng-reflect-name='0']//input[@data-test='levelName']",
+        level2Edit: "//div[@ng-reflect-name='1']//input[@data-test='levelName']",
+        level3Edit: "//div[@ng-reflect-name='2']//input[@data-test='levelName']",
         tddescription: 'td#description',
+        errorCode: "[data-test='codeErrorRequired']",
+        statusType: "[data-test='status']",
+        inactiveStatus: "//*[@id='status']/p-inputswitch/div/span",
+        valueSelect: "//ul[contains(@class, 'p-dropdown-items')]",
+        acceptAlert: "//button[@data-test='okDialog']",
         errorCode: "[data-test='codeErrorRequired']"
     }
 }

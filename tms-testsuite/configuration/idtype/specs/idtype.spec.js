@@ -6,7 +6,7 @@ import * as func from "../../../utils/function"
 import * as utilLocators from "../../../utils/locator"
 
 
-//Author: Hiren Kathiria
+//Author: Akash Chavda  
 
 describe('My Login application', () => {
   let result;
@@ -26,14 +26,22 @@ describe('My Login application', () => {
     await func.waitAndFill(locators.fields.idtypename, idtypeTestData.idtypename, 3000);
     await func.waitAndFill(locators.fields.description, idtypeTestData.idTypeDescription, 3000);
     await func.setNumbervalue(locators.fields.numberlength,idtypeTestData.numberLengthdata,3000);
-    await func.radioButton(locators.fields.validationrequired);
+    await func.radioButton(locators.fields.validationrequired1, 3000);
     await func.waitAndClick(locators.button.saveidtype, 1000);
     await func.verifySearch(locators.fields.searchidtype, result);
   })
 
-  it('Edit ID Type', async () => {   
+   it('Edit ID Type', async () => {   
     await func.waitAndClick(locators.button.editidtype, 3000);
     await func.waitAndFill(locators.fields.description, idtypeTestData.editidTypeDescription, 3000);
+    await func.radioButton(locators.fields.validationrequired, 3000);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect);
     await func.waitAndClick(locators.button.saveidtype, 1000);
-  })
-});
+  }) 
+
+ /* it('Inactive Status', async ()=> {
+    await func.verifySearch(locators.fields.searchidtype, result);
+    await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+    await func.waitAndClick(locators.fields.acceptAlert, 3000);
+  }) */
+ });

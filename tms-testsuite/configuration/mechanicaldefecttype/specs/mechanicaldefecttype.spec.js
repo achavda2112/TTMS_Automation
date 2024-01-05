@@ -20,17 +20,24 @@ describe('My Login application', async () => {
   
   it('Add mechanicaldefecttype', async () => {
     await func.waitAndClick(locators.button.addMechanicaldefecttype, 3000);
-    const result = await func.setUniqueValue(locators.fields.mechanicaldefecttypeCode, locators.fields.errorCode, false, 10);
+    const result = await func.setUniqueValue(locators.fields.mechanicaldefecttypeCode, locators.fields.errorCode, false, 3);
     console.log("-----------Result---------", result);
-    await func.waitAndFill(locators.fields.mechanicaldefecttypeDescription, mechanicaldefecttyeTestData.description1, 5000);
+    await func.waitAndFill(locators.fields.mechanicaldefecttypeDescription, mechanicaldefecttyeTestData.description, 3000);
     await func.waitAndClick(locators.button.saveMechanicaldefecttype, 1000);
     await func.verifySearch(locators.fields.searchMechanicaldefecttype, result);
   })
 
   it('Edit mechanicaldefecttype', async () => {
     await func.waitAndClick(locators.button.editMechanicaldefecttype, 3000);
-    await func.waitAndFill(locators.fields.mechanicaldefecttypeDescription, mechanicaldefecttyeTestData.editdescription1, 3000);
+    await func.waitAndFill(locators.fields.mechanicaldefecttypeDescription, mechanicaldefecttyeTestData.editdescription, 3000);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect); 
     await func.waitAndClick(locators.button.saveMechanicaldefecttype, 1000);
   })
+
+  it('Inactive Status', async ()=> {
+    await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+    await func.waitAndClick(locators.fields.acceptAlert, 3000);
+  })
+
 })
 

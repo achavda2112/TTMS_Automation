@@ -1,7 +1,5 @@
 import * as locators from "../warranttypeLocators"
 import * as warranttypeData from "../warranttypeTestData"
-
-
 import * as userData from "../../../utils/testData"
 import * as func from "../../../utils/function"
 import * as utilLocators from "../../../utils/locator"
@@ -16,6 +14,7 @@ describe('My Login application', () => {
     await func.login(utilLocators.menu.url, userData.username, userData.password);
     await $(utilLocators.menu.configuration).waitForExist();
     await $(utilLocators.menu.configuration).click();
+    await browser.pause(2000);
     await func.navigateMenu(utilLocators.menu.warrantType);
     await $(locators.button.addWarranttype).waitForExist();
   });
@@ -23,10 +22,10 @@ describe('My Login application', () => {
 
   it('Add warranttype', async () => {
     await func.waitAndClick(locators.button.addWarranttype, 3000);
-    const result = await func.setUniqueValue(locators.fields.warranttypeCode, locators.fields.errorCode, false , 6);
+    result = await func.setUniqueValue(locators.fields.warranttypeCode, locators.fields.errorCode, false , 6);
     console.log("-----------Result---------",result);
-    //await func.waitAndFill(locators.fields.warranttypeCode, warranttypeData.warranttypeCode, 3000);
     await func.waitAndFill(locators.fields.description, warranttypeData.description, 3000);
+    await func.waitAndFill(locators.fields.shortDescription, warranttypeData.shortDescription,3000)
     await func.waitAndClick(locators.button.saveWarranttype, 1000);
     await func.verifySearch(locators.fields.searchWarranttype, result);
   })
@@ -35,7 +34,13 @@ describe('My Login application', () => {
     await func.waitAndClick(locators.button.editWarranttype, 3000);
     await func.waitAndFill(locators.fields.description, warranttypeData.editdescription, 3000);
     await func.waitAndFill(locators.fields.shortDescription, warranttypeData.editshortDescription, 3000);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect);
     await func.waitAndClick(locators.button.saveWarranttype, 1000);
+    await func.verifySearch(locators.fields.searchWarranttype, result);
+  })
+  it('Inactive Status', async ()=> {
+    await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+    await func.waitAndClick(locators.fields.acceptAlert, 3000);
   })
 })
 

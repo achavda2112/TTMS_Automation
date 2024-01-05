@@ -1,0 +1,87 @@
+module.exports = {
+    button: {
+        addeticket: "[data-test='addAction']",
+        saveAction: "[data-test='save']",
+        editAction: "[data-test='actionEdit']",
+        next: "//*[span='Next']",
+        preview: "[ng-reflect-label='Preview']",
+        idTypecollapse : "//*[span='ID TYPE']",
+        nameCollapse: "//*[span='Name']",
+        addressCollapse: "//*[span='Address']",
+        locationbtn: "//*[p-fieldset]//a[.//*[contains(text(),'Location')]]",
+        offencebtn : "//*[p-fieldset]//a[.//*[contains(text(),'Offence')]]",
+        zonebtn :"//*[p-fieldset]//a[.//*[contains(text(),'Zone')]]",
+        saveTicket: "//button[@class='p-element p-button p-component']"
+
+    },
+    fields: {
+        //searchAction: "[data-test='actionSearch']",
+        ticketType: "//p-dropdown[@data-test='ticketType']",
+        valueSelect: "//ul[contains(@class, 'p-dropdown-item')]",
+        issuedate : "//p-calendar[@ng-reflect-name='issueDate']",
+        idType : "//p-dropdown[@ng-reflect-name='idType']",
+        idSelect: "//ul[contains(@class, 'p-dropdown-items')]",
+        idNumber : "//input[@id='idNumber']",
+        idNumberconfirmation : "//input[@id='idNumberConfirmation']",
+        endDate: "//p-calendar[@ng-reflect-name='idExpiryDate']",
+        dlClass: "//p-dropdown[@placeholder='Select DL Class']",
+        fname : "[id='firstName']",
+        mname : "[id='middleName']",
+        lname : "[id='lastName']",
+        dob: "//input[@class='ng-tns-c25-332 p-inputtext p-component ng-star-inserted' and @id='icon' and @disabled='']",
+        gender: "//p-dropdown[@ng-reflect-name='gender']",
+        streetNo : "[id='streetNumber']",
+        streetName : "[id='streetName']",
+        mark : "[id='mark']",
+        pobox : "[id='poBox']",
+        poname : "[id='poName']",
+        parishone : "[id='parish']",
+        city : "[id='city']",
+        state : "[id='state']",
+        zipcode : "[id='zipCode']",
+        country : "//p-dropdown[@ng-reflect-name='country']",
+        plateregistrationno : "[id='plateRegistrationNumber']",
+        actioncode: "[data-test='code']",
+        vehicletype : "//p-dropdown[@ng-reflect-name='type']",
+        mvid : "[id='mvid']",
+        mvrcno : "[id='mvrcno']",
+        expirationmvrs: "//input[@id='icon']",
+        idExpiry: "//input[@class='ng-tns-c25-338 p-inputtext p-component ng-star-inserted' and @id='icon']",
+        vehicleyear : "[id='year']",
+        vehiclemake : "//p-dropdown[@ng-reflect-name='make']",
+        vehiclemodel : "[id='model']",
+        vehiclecolor1 : "//p-dropdown[@ng-reflect-name='colour1']",
+        vehiclecolor2 : "//p-dropdown[@ng-reflect-name='colour2']",
+
+        parish1 : "//p-dropdown[@ng-reflect-name='parish']",
+        locationname : "//p-dropdown[@ng-reflect-name='location']",
+        inthevicinityof : "[id='vicinity']",
+        from : "[id='from']",
+        to : "[id='to']",
+
+        selectoffence : "//p-dropdown[@ng-reflect-name='offence']",
+        fine : "[id='fine']",
+        demiritpoints : "[id='demerit']",
+        offencedesc : "[id='desc']",
+        comments : "[id='comment']",
+
+        selectzone : "//p-dropdown[@ng-reflect-name='zone']",
+        speeddetectiondevice : "//p-dropdown[@ng-reflect-name='speed']",
+        postalspeed : "[id='postalSpeed']",
+        recordedspeed : "[id='recordedSpeed']",
+
+        courtlocation : "//p-dropdown[@ng-reflect-name='courtLocation']",
+        courtDate : "//p-calendar[@ng-reflect-name='courtDate']",
+        mandatoryCourtAppearance : "//p-checkbox[@ng-reflect-name='courtAppearance']",
+
+        enforcementOfficer : "//p-dropdown[@id ='enforcementOfficer']",
+        stationassignedto : "//p-dropdown[@id ='stAssignTo']",
+        ticketsignedbyoffender : "//p-dropdown[@id ='signedByOffender']",
+
+
+        description: "[data-test='description']",
+        tddescription: 'td#description',
+        errorCode: "[data-test='codeErrorRequired']"
+        
+    }
+}

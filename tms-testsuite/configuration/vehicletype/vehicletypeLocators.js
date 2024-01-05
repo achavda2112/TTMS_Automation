@@ -8,6 +8,11 @@ module.exports = {
         vehicleTypeDescription: "[data-test='description']",
         searchVehicleType: "[data-test='vehicleTypeSearch']",
         vehicleTypeCode: "[data-test='code']",
-        tddescription: 'td#description'
-    }
+        tddescription: 'td#description',
+        errorCode: "[data-test='codeErrorRequired']",
+        statusType: "[data-test='status']",
+        inactiveStatus: "//*[@id='status']/p-inputswitch/div/span",
+        valueSelect: "//ul[contains(@class, 'p-dropdown-items')]",
+        acceptAlert: "//button[@label='Ok']"
+    }	
 }

@@ -23,21 +23,34 @@ describe('My Login application', () => {
   it('Add Organization Type', async () => {
     await func.waitAndClick(locators.button.addorganizationtype, 3000);
     await func.waitAndFill(locators.fields.organizationName, organizationTestData.organizationName1, 3000);
-    const result = await func.setUniqueValue(locators.fields.organizationCode, locators.fields.errorCode, false, 10);
+    result = await func.setUniqueValue(locators.fields.organizationCode, locators.fields.errorCode, false, 10);
     console.log("-----------Result---------", result);
     await func.waitAndFill(locators.fields.nameofMinistry, organizationTestData.nameofMinistry1, 3000);
     await func.waitAndClick(locators.fields.ticketType);
     await func.multiselectDropdown(locators.fields.selectTickettype);
+    await func.multiselectDropdown(locators.fields.selectTickettype);
     await func.waitAndFill(locators.fields.levelone, organizationTestData.level1, 3000);
     await func.waitAndClick(locators.fields.addnewRow);
     await func.waitAndFill(locators.fields.leveltwo, organizationTestData.level2, 3000);
-    await func.waitAndClick(locators.button.saveorganizationtype,5000);
+    await func.waitAndClick(locators.button.saveorganizationtype, 5000);
     await func.verifySearch(locators.fields.searchorganizationtype, result);
   })
 
-   it('Edit Organization Type', async () => {   
-     await func.waitAndClick(locators.button.editorganizationtype, 3000);
-     await func.waitAndFill(locators.fields.nameofMinistry, organizationTestData.editnameofMinistry, 3000);
-     await func.waitAndClick(locators.button.saveorganizationtype, 1000);
-   })
+  it('Edit Organization Type', async () => {
+    await func.waitAndClick(locators.button.editorganizationtype, 3000);
+    await func.waitAndFill(locators.fields.nameofMinistry, organizationTestData.editnameofMinistry, 3000);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect);
+    await func.waitAndFill(locators.fields.levelone, organizationTestData.level1Edit, 3000);
+    await func.waitAndFill(locators.fields.leveltwo, organizationTestData.level2Edit, 3000);
+    await func.waitAndClick(locators.fields.addnewRow);
+    await func.waitAndFill(locators.fields.levelthree, organizationTestData.level3Edit, 3000);
+    await func.waitAndClick(locators.button.saveorganizationtype, 1000);
+  })
+
+  it('Inactive Status', async () => {
+    await func.verifySearch(locators.fields.searchorganizationtype, result);
+    await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+    await func.waitAndClick(locators.fields.acceptAlert, 3000);
+  })
+
 });

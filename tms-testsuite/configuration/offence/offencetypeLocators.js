@@ -6,11 +6,13 @@ module.exports = {
     },
     fields: {
         searchoffencetype: "//span//input[@type='text']",
+        searchAction: "[data-test='actionSearch']",
         offencetypecode: "[data-test='code']",
         description: "[data-test='description']",
         offenceshortDescription: "[data-test='shortDescription']",
         sectionofAct: "[data-test='sectionOfAct']",
-        mandatoryCourtAppearance: "[data-test='mandatoryCourtAppearanceTrue']",
+        mandatoryCourtAppearance: "[data-test='mandatoryCourtAppearanceFalse']",
+        mandatoryCourtAppearance1: "[data-test='mandatoryCourtAppearanceTrue']",
         zoneRequired: "[data-test='zoneRequired']",
         ticketType: "[ng-reflect-name='ticketTypes']",
         selectTickettype : "//p-multiselectitem//li//div[@class='p-checkbox-box']",
@@ -19,6 +21,12 @@ module.exports = {
         tddescription: 'td#description',
         fineAmounts: "//input[@formcontrolname='fineAmount']",
         demeritPoints: "//input[@formcontrolname='demeritPoints']",
-        errorCode: "[data-test='codeErrorRequired']"
+        errorCode: "[data-test='codeErrorRequired']",
+        statusType: "[data-test='status']",
+        inactiveStatus: "//p-dropdown[@id='status']",   
+        valueSelect: "//ul[contains(@class,'p-dropdown-item')]",
+        acceptAlert: "//button[@label='Ok']",
+        inactiveStatus1: "//*[@id='status']",
+
     }
 }

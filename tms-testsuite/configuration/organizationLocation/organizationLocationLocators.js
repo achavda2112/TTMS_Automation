@@ -12,6 +12,8 @@ module.exports = {
         selectOrganizationType: "//ul[contains(@class, 'p-dropdown-items')]",
         organization: "[id='organization']",
         parent: "//ul[contains(@class, 'p-tree')]",
+        Childbutton: "//button[@class='p-ripple p-element p-tree-toggler p-link' and @type='button']",
+        Child: "//ul[contains(@class, 'p-tree')]",
         organizationTypecode: "[data-test='code']",
         shortDescription: "[data-test='shortDesc']",
         organizationLocationcode: "[id='code']",
@@ -30,6 +32,10 @@ module.exports = {
         parish: "//p-dropdown[@data-test='parish']",
         selectParish: "//ul[contains(@class, 'p-dropdown-items')]",
         tddescription: 'td#description',
-        errorCode: "[data-test='codeErrorRequired']"
+        errorCode: "[data-test='codeErrorRequired']",
+        statusType: "[data-test='status']",
+        inactiveStatus: "//*[@id='status']/p-inputswitch/div/span",
+        valueSelect: "//ul[contains(@class, 'p-dropdown-items')]",
+        acceptAlert: "//button[@data-test='okDialog']",
     }
 }

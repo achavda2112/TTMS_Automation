@@ -23,7 +23,7 @@ describe('My Login application', async () => {
   
   it('Add parish', async () => {
     await func.waitAndClick(locators.button.addParish, 3000);
-    const result = await func.setUniqueValue(locators.fields.parishCode, locators.fields.errorCode,true,2);
+    result = await func.setUniqueValue(locators.fields.parishCode, locators.fields.errorCode,true,2);
     console.log("-----------Result---------",result);
     await func.waitAndFill(locators.fields.parishname, parishTestData.parishName1, 3000);
     await func.waitAndClick(locators.button.saveParish, 1000);
@@ -33,7 +33,13 @@ describe('My Login application', async () => {
   it('Edit parish', async () => {
     await func.waitAndClick(locators.button.editParish, 3000);
     await func.waitAndFill(locators.fields.parishname, parishTestData.editparishName, 3000);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect);
     await func.waitAndClick(locators.button.saveParish, 1000);
+  })
+  it('Inactive Status', async ()=> {
+    await func.verifySearch(locators.fields.searchParish, result);
+    await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+    await func.waitAndClick(locators.fields.acceptAlert, 3000);
   })
 })
 

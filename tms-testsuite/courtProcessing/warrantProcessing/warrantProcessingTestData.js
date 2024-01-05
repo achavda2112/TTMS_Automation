@@ -1,0 +1,15 @@
+module.exports = {
+    warrrantRefNumber: "MT168",
+    warrantIssueStartDate: "",
+    warrantIssueEndDate: "2023-12-31",
+    dlNumber: "113307390",
+    offenderName: "KENIESHA",
+    activityDate: "2023-12-28",
+    dispatchedBy: "Akash",
+    comments: "Test1", 
+    executedBy: "QA Akash",
+    location: "Argusoft",
+    returnedBy: "Akash",
+    receivedBy: "Swati",
+    cancelledBy: "Shifa",
+}

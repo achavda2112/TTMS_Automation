@@ -27,6 +27,12 @@ describe('My Login application', () => {
   it('Edit speed detecting device', async () => {
     await func.waitAndClick(locators.button.editDevice, 3000);
     await func.waitAndFill(locators.fields.description, speeddetectingdeviceTestData.editdescription, 3000);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect);
     await func.waitAndClick(locators.button.saveDevice, 1000);
+  })
+  it('Inactive Status', async ()=> {
+    await func.verifySearch(locators.fields.searchDevice, speeddetectingdeviceTestData.description);
+    await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+    await func.waitAndClick(locators.fields.acceptAlert, 3000);
   })
 });

@@ -18,7 +18,7 @@ describe('My Login application', () => {
   
   it('Add event', async () => {
     await func.waitAndClick(locators.button.addticketType, 3000);
-    const result = await func.setUniqueValue(locators.fields.tickettypecode, locators.fields.errorCode,6);
+    result = await func.setUniqueValue(locators.fields.tickettypecode, locators.fields.errorCode,6);
     console.log("-----------Result---------",result);
     await func.waitAndFill(locators.fields.tickettypename, tickettypeTestData.ticketTypename, 3000);
     await func.waitAndFill(locators.fields.description, tickettypeTestData.ticketTypeDescription, 3000);
@@ -34,12 +34,26 @@ describe('My Login application', () => {
     await func.waitAndClick(locators.fields.idtypeSelect1);
     await func.waitAndClick(locators.fields.idtypeSelect2);
     await func.waitAndClick(locators.button.saveticketType, 1000);
-    await func.verifySearch(locators.fields.searchEvent, result);
+    await func.verifySearch(locators.fields.searchtickettypecode, result);
   })
 
   it('Edit event', async () => {   
-    await func.waitAndClick(locators.button.editEvent, 3000);
-    await func.waitAndFill(locators.fields.description, eventTestData.editeventDescription, 3000);
-    await func.waitAndClick(locators.button.saveEvent, 1000);
+    await func.waitAndClick(locators.button.editticketType, 3000);
+    await func.waitAndFill(locators.fields.description, tickettypeTestData.ticketTypeDescriptionEdited, 3000);
+    await func.waitAndFill(locators.fields.ticketnoprefix, tickettypeTestData.eticketprefixEdited, 3000);
+    await func.waitAndFill(locators.fields.ticketnolength, tickettypeTestData.eticketlengthEdited, 3000);
+    await func.waitAndFill(locators.fields.manualticketnoprefix, tickettypeTestData.manualticketPrefixEdited, 3000);
+    await func.waitAndFill(locators.fields.manualticketnolength, tickettypeTestData.manualticketlengthEdited, 3000);
+    await func.waitAndFill(locators.fields.paymentDeadline, tickettypeTestData.paymentDeadlineEdited, 3000);
+    await func.waitAndFill(locators.fields.noofdaysforcourtdate, tickettypeTestData.courtdatedeadlineEdited, 3000);
+    await func.waitAndClick(locators.fields.mvInfo);
+    await func.waitAndClick(locators.fields.licencenoRequired);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect);
+    await func.waitAndClick(locators.button.saveticketType, 1000);
+  })
+  it('Inactive Status', async ()=> {
+    await func.verifySearch(locators.fields.searchtickettypecode, result);
+    await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+    await func.waitAndClick(locators.fields.acceptAlert, 3000);
   })
 });

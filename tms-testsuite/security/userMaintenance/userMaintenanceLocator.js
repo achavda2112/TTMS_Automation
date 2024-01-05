@@ -3,6 +3,8 @@ module.exports = {
         adduserMaintenance: "[ng-reflect-icon='pi pi-plus']",
         saveuserMaintenance: "[ng-reflect-label='Save']",
         edituserMaintenance: "[ng-reflect-icon='pi pi-pencil']",
+        chngpwd: "//*[@ng-reflect-label='Change Password']",
+        login: "//*[@data-test='login']"
     },
     fields: {
         searchuserMaintenance: "//span//input[@type='text']",
@@ -17,12 +19,26 @@ module.exports = {
         selectOrganization: "//ul[contains(@class, 'p-dropdown-item')]",
         location: "//p-multiselect[@id='organizationLocation']",
         selectLocation: "//p-multiselectitem[1]//div[@class='p-checkbox-box']",
+        selectLocation1: "//p-multiselectitem[1]//div[@class='p-checkbox-box p-highlight']",
+        selectLocation2: "//p-multiselectitem[2]//div[@class='p-checkbox-box']",
         userGroup: "//p-multiselect[@id='userGroup']",
         userGroup1: "//p-multiselectitem[1]//div[@class='p-checkbox-box']",
         userGroup2: "//p-multiselectitem[2]//div[@class='p-checkbox-box']",
         userGroup3: "//p-multiselectitem[3]//div[@class='p-checkbox-box']",
         collapseBasicinfo: "//span[text()='Basic Info']",
         tddescription: 'td#description',
-        errorCode: "[data-test='codeErrorRequired']"
+        errorCode: "[data-test='codeErrorRequired']",
+        statusType: "[id='pr_id_14_label']",
+        inactiveStatus: "//*[@id='status']/p-inputswitch/div/span",
+        valueSelect: "//ul[contains(@class, 'p-dropdown-items')]",
+        acceptAlert: "//button[@label='Ok']",
+        profile: "//*[@shape='circle']",
+        logout: "//span[@class='sub-item-icon pi pi-sign-out']",
+        username: "//*[@data-test='username']",
+        loginpasswrd: "//*[@type='password']//input",
+        oldpwd: "//*[@placeholder='Old Password']",
+        newpwd: "//*[@placeholder='New Password']",
+        confirmpwd: "//*[@placeholder='Confirm Password']",
+       
     }
 }

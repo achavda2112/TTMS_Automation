@@ -5,7 +5,7 @@ import * as userData from "../../../utils/testData"
 import * as func from "../../../utils/function"
 import * as utilLocators from "../../../utils/locator"
 
-//Author: Hiren Kathiria
+//Author: Akash Chavda
 
 describe('My Login application', () => {
 
@@ -31,6 +31,11 @@ describe('My Login application', () => {
   it('Edit Driver Licence', async () => {   
     await func.waitAndClick(locators.button.editDriverslicense, 3000);
     await func.waitAndFill(locators.fields.description, driverslicenseTestData.editdriverslicenseDescription, 3000);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect);
     await func.waitAndClick(locators.button.saveDriverslicense, 1000);
+  }) 
+  it('Inactive Status', async ()=> {
+    await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+    await func.waitAndClick(locators.fields.acceptAlert, 3000);
   })
 });

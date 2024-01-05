@@ -7,8 +7,12 @@ module.exports = {
     fields: {
         searchAction: "[data-test='actionSearch']",
         actionType: "//p-dropdown[@data-test='selectActionType']",
+        statusType: "//*[@data-test='status']", 
         valueSelect: "//ul[contains(@class, 'p-dropdown-items')]",
         actioncode: "[data-test='code']",
+        inactiveStatus: "//*[@id='status']/p-inputswitch/div/span",
+        acceptAlert: "//button[@data-test='okDialog']",
+        
         description: "[data-test='description']",
         tddescription: 'td#description',
         errorCode: "[data-test='codeErrorRequired']"

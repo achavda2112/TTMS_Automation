@@ -32,6 +32,14 @@ describe('My Login application', () => {
     await func.waitAndClick(locators.button.editEventreftype, 3000);
     await func.waitAndFill(locators.fields.eventreftypeLabel, eventreftypeTestData.editeventreftypeLabel, 3000);
     await func.waitAndFill(locators.fields.description, eventreftypeTestData.editeventreftypeDescription, 3000);
+    await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect);
     await func.waitAndClick(locators.button.saveEventreftype, 1000);
   })
+ 
+  it('Inactive Status', async ()=> {
+    await func.waitAndClick(locators.fields.inactiveStatus, 3000);
+    await func.waitAndClick(locators.fields.acceptAlert, 3000);
+  })
+
 });
+

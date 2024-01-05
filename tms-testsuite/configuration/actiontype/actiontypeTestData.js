@@ -1,4 +1,4 @@
 module.exports = {
-    actionTypeDescription: "Test QA1",
-    editactionTypeDescription: "Test edit QA1"
+    actionTypeDescription: "Test QA",
+    editactionTypeDescription: "Test edit QA"
 }

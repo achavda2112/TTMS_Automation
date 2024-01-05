@@ -9,7 +9,11 @@ module.exports = {
         groupName: "[id='inputGroupName']",
         description: "[id='description']",
         featureAll: "//div[contains(@class,'p-datatable-header')]//p-checkbox[contains(@class,'p-element')]",
-        tddescription: 'td#description',
-        errorCode: "[data-test='codeErrorRequired']"
+        tddescription: '//*[@formcontrolname="description"]',
+        errorCode: "[data-test='codeErrorRequired']",
+        statusType: "//*[@id='status']",
+        inactiveStatus: "//*[@id='status']/p-inputswitch/div/span",
+        valueSelect: "//ul[contains(@class, 'p-dropdown-items')]",
+        acceptAlert: "//button[@label='Ok']"
     }
 }
