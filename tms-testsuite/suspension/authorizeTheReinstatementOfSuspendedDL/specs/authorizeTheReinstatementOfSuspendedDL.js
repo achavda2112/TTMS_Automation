@@ -7,6 +7,7 @@ import locator, * as utilLocators from "../../../utils/locator"
 describe('My Login application', () => {
 let handles;
 
+
     before(async () => {
         await func.login(utilLocators.menu.url, userData.username, userData.password);
         await browser.pause(3000);
