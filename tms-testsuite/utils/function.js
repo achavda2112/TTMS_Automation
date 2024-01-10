@@ -243,6 +243,24 @@ async function setUniqueValue1(locator, errorLocator, length = 5) {
     return result;
 }
 
+async function setUniqueValue3(locator, errorLocator, isNumber = false) {
+    let data = 1
+    try {
+        data = parseInt(fs.readFileSync("Title.txt", { encoding: 'utf8', flag: 'r' })) + 1;
+        fs.writeFileSync("Title.txt", data.toString());
+    } catch (error) {
+        fs.writeFileSync("Title.txt", "2");
+    }
+    const result = "Title" + data.toString()
+    await waitAndFill(locator, result);
+    await browser.keys(['Tab']);
+    const isDisplayed = await $(errorLocator).isDisplayed({ timeout: 3000 });
+    console.log("---HERE---", result);
+    if (isDisplayed) {
+        return await generateSequentialNumber('Title+1');
+    }
+    return result;
+}
 async function generateUniqueEmail(locator) {
     const baseEmail = 'TestUser+1'; // Base email address without the domain
     const domain = 'example.com'; // Domain part of the email address
@@ -293,5 +311,6 @@ export {
     generateUniqueEmail,
     waitForLoader,
     waitAndFillWithMore,
-    setUniqueValue2
+    setUniqueValue2,
+    setUniqueValue3
 };

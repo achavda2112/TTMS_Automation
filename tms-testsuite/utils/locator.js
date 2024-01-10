@@ -79,6 +79,19 @@ module.exports = {
         reprintreissueNoticeToTAJ:'//*[@id="menu_item_reprint_reissue_notice_to_taj"]',
         removalOfEndorsementOnDriversLicence:'//*[@id="menu_item_removal_of_endorsement_on_driver’s_licence"]',
         itemReversalOfSuspensionAdd:'//*[@id="menu_item_reversal_of_suspension_-_add"]',
+        utilities: "//*[@id='menu_item_utilities']",
+        apiMaintenance: "//*[@id='menu_item_api_maintenance']",
+        emailCorrespondenceMaintenance: "//*[@id='menu_item_email_correspondence_maintenance']",
+        emailGroupMaintenance: "//*[@id='menu_item_email_group_maintenance']",
+        letterHeadSetup: "//*[@id='menu_item_letter_head_setup']",
+        reports: "//*[@id='menu_item_reports']",
+        cashiering: "//*[@id='menu_item_cashiering']",
+        cashierDailySettlement: "//*[@id='menu_item_cashier_daily_settlement']",
+        manualPaymentsReceiptListing: "//*[@id='menu_item_manual_payments_receipt_listing']",
+        itemOtcReceiptListing: "//*[@id='menu_item_otc_receipt_listing']",
+
+
+
 
 
     }
