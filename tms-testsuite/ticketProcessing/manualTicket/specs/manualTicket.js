@@ -33,8 +33,8 @@ describe('My Login application', () => {
 
         await func.selectDropdown(locators.fields.idType, 2, locators.fields.idSelect);
         await func.waitAndFill(locators.fields.idNumber, manualTicketTestData.idnumber, 3000, true);
-        await func.waitAndFill(locators.fields.idNumberconfirmation, manualTicketTestData.confirmidnumber, 3000, true);
-        await browser.pause(1000);
+        await func.waitAndFill(locators.fields.idNumberconfirmation, manualTicketTestData.confirmidnumber, 3000, true, [Key.Enter]);
+        await browser.pause(3000);
         // await func.waitAndFill(locators.fields.idExpiry, manualTicketTestData.expirationMVRC, 3000);
         // await func.selectDropdown(locators.fields.dlClass, 1, locators.fields.valueSelect);
         // await func.waitAndClick(locators.button.idTypecollapse, 1000);

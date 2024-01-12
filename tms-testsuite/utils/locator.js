@@ -89,10 +89,21 @@ module.exports = {
         cashierDailySettlement: "//*[@id='menu_item_cashier_daily_settlement']",
         manualPaymentsReceiptListing: "//*[@id='menu_item_manual_payments_receipt_listing']",
         itemOtcReceiptListing: "//*[@id='menu_item_otc_receipt_listing']",
-
-
-
-
+        courtProceedings: "//*[@id='menu_item_court_proceedings']",
+        appealSubmitted: "//*[@id='menu_item_appeals_submitted']",
+        commitmentsIssued: "//*[@id='menu_item_commitments_issued']",
+        PoliceListForCourtAppearance: "//*[@id='menu_item_police_list_for_court_appearance']",
+        withdrawnCasesReports: "//*[@id='menu_item_withdrawn_cases']",
+        menu_item_disqualifications: "//*[@id='menu_item_disqualifications']",
+        menuItemDriverLicenceDemeritPoints: "//*[@id='menu_item_driver_licence_demerit_points']",
+        menuItemExpungedDemeritPoints: "//*[@id='menu_item_expunged_demerit_points']",
+        menuItemOffendersWithDemeritPoints: "//*[@id='menu_item_offenders_with_demerit_points']",
+        menuItemSuspensionList: "//*[@id='menu_item_suspension_list']",
+        menuItemDisqualifiedDriversLicences: '//*[@id="menu_item_disqualified_driver\'s_licences"]',
+        menuItemPayments: '//*[@id="menu_item_payments"]',
+        editedPaymentsRepors: '//*[@id="menu_item_edited_payments"]',
+        failedPaymentsRepors: '//*[@id="menu_item_failed_payments"]',
+        summaryOfPaymentsByCourtRepors: '//*[@id="menu_item_summary_of_payments_by_court"]',
 
     }
 }
