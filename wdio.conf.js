@@ -22,7 +22,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './tms-testsuite/reports/payments/editedPaymentsReport/specs/*.js'
+        './tms-testsuite/reports/ticketProcessing/issuedTicketsReport/specs/*.js'
     ],
     // Patterns to exclude.
     exclude: [
