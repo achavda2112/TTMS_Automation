@@ -6,8 +6,6 @@ module.exports = {
 fields: {
     PaymentDateStart: "//*[@formcontrolname='paymentDateFrom']//input",
     PaymentDateEnd: "//*[@formcontrolname='paymentDateTo']//input",
-    parish: "//*[@formcontrolname='parish']",
-    paymentLocation: "//*[@formcontrolname='paymentLocation']",
     valueSelect: "//ul[contains(@class, 'p-dropdown-item')]",
     errorCode: "[data-test='codeErrorRequired']",
 }

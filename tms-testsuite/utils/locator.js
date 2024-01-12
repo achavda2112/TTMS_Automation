@@ -104,6 +104,11 @@ module.exports = {
         editedPaymentsRepors: '//*[@id="menu_item_edited_payments"]',
         failedPaymentsRepors: '//*[@id="menu_item_failed_payments"]',
         summaryOfPaymentsByCourtRepors: '//*[@id="menu_item_summary_of_payments_by_court"]',
+        menu_item_ticket_processing_reports: "//*[@id='menu_item_ticket_processing']",
+        menu_item_issued_tickets_reports: "//*[@id='menu_item_issued_tickets']",
+        menu_item_offender_Reports: "//*[@id='menu_item_offender']",
+        menu_item_tickets_for_offender_Reports: "//*[@id='menu_item_tickets_for_offender']",
+        menu_item_traffic_offence_register_Reports: "//*[@id='menu_item_traffic_offence_register']",
 
     }
 }
