@@ -9,7 +9,7 @@ fields: {
     ticketIssueDateStart: "//*[@formcontrolname='ticketIssueDateFrom']//input",
     ticketIssueDateEnd: "//*[@formcontrolname='ticketIssueDateTo']//input",
     idNumber: "//*[@id='idNumber']",
-    offenceParish: "//*[@id='offenceParish']",
+    parish: "//*[@id='parish']",
     offenceLocation: "//*[@id='location']",
     offence: "//*[@id='offence']",
     area: "//*[@ng-reflect-placeholder='AREA']",

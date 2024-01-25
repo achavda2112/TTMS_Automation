@@ -1,0 +1,35 @@
+module.exports = {
+    button: {
+        save: "//*[@data-test='save']",
+
+},
+fields: {
+    valueSelect: "//ul[contains(@class, 'p-dropdown-item')]",
+    dateFormat: "//*[@id='commonDateFormat']",
+    collectorate: "//*[@id='collectorate']",
+    magistrate: "//*[@id='magistrate']",
+    isCodeDisabledYes: "//*[@inputid='isCodeDisabled1']",
+    isCodeDisabledNo: "//*[@inputid='isCodeDisabled']",
+    daysBeforeVoidTicket: "//*[@inputid='daysBeforeVoidTicket']",
+    enforcementOfficer: "//*[@id='enforcementOfficer']",
+    prepareCourtSheetPreviousDays: "//*[@inputid='prepareCourtSheetPreviousDays']",
+    prepareCourtSheetNextDays: "//*[@inputid='prepareCourtSheetNextDays']",
+    prepareCourtSheetMaxRecordsToFetch: "//*[@inputid='prepareCourtSheetMaxRecordsToFetch']",
+    isDisplayExpungePointFieldTrue: "//*[@inputid='isDisplayExpungePointField1']",
+    isDisplayExpungePointFieldFalse: "//*[@inputid='isDisplayExpungePointField']",
+    isDefaultValueForExpungePointFieldTrue: "//*[@inputid='isDefaultValueForExpungePointField1']",
+    isDefaultValueForExpungePointFieldFalse: "//*[@inputid='isDefaultValueForExpungePointField']",
+    minDaysForDisqualificationConfirmation: "//*[@inputid='minDaysForDisqualificationConfirmation']",
+    maxDaysForDisqualificationConfirmation: "//*[@inputid='maxDaysForDisqualificationConfirmation']",
+    allowedFileTypesForLogo: "//*[@id='allowedFileTypesForLogo']",
+    maxFileSizeInMbForLogo: "//*[@inputid='maxFileSizeInMbForLogo']",
+    CheckAll: "//div[@role='checkbox']",
+    allowedFileTypesForDocument: "//*[@id='allowedFileTypesForDocument']",
+    maxFileSizeInMbForDocument: "//*[@inputid='maxFileSizeInMbForDocument']",
+    endorsementRemovalPeriodInMonths: "//*[@inputid='endorsementRemovalPeriodInMonths']",
+    daysBeforeDraftTicketPurge: "//*[@inputid='daysBeforeDraftTicketPurge']",
+    monthsBeforeDemeritPointExpire: "//*[@inputid='monthsBeforeDemeritPointExpire']",
+    daysDifferenceForReport: "//*[@inputid='daysDifferenceForReport']",
+    maxLengthForDisplayingDataInTable: "//*[@inputid='maxLengthForDisplayingDataInTable']",
+}
+}

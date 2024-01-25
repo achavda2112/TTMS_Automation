@@ -1,0 +1,18 @@
+module.exports = {
+    collectorate: "Collectorate",
+    magistrate: "Magistrate",
+    daysBeforeVoidTicket: "45",
+    enforcementOfficerRoleName: "EnforcementOfficer",
+    prepareCourtSheetPreviousDays: "30",
+    prepareCourtSheetNextDays: "40",
+    maxRecordsToBeFetched: "100",
+    minimumDaysForDisqualificationConfirmation: "1",
+    maximumDaysForDisqualificationConfirmation: "30",
+    maximumFileSizeForLogo: "2",
+    maximumFileSizeForDocument: "2",
+    endorsementRemovalPeriod: "36",
+    daysBeforePurgingDraftTicket: "30",
+    numberOfMonthsBeforeExpiringDemeritPointsOfOffender: "15",
+    NumberOfDaysDifferenceBetweenStartAndEndDateForReport: "180",
+    maxLengthForDisplayingDataInTable: "15",
+}

@@ -1,5 +1,6 @@
 module.exports = {
     ticketIssueDateStart: "01-12-2023",
     ticketIssueDateEnd: "31-01-2024",
-    idNumber: "100000037",
+    paymentDateStart: "01-12-2023",
+    paymentDateEnd: "31-01-2024",
 }

@@ -6,8 +6,12 @@ module.exports = {
 fields: {
     ticketIssueDateStart: "//*[@formcontrolname='ticketIssueDateFrom']//input",
     ticketIssueDateEnd: "//*[@formcontrolname='ticketIssueDateTo']//input",
-    idNumber: "//*[@id='idNumber']",
-    ticketStatus: "//*[@id='ticketStatus']",
+    parish: "//*[@id='parish']",
+    paymentLocation: "//*[@id='paymentLocation']",
+    area: "//*[@id='firstLevel']",
+    policeStation: "//*[@id='policeStation']",
+    paymentDateFrom: "//*[@formcontrolname='paymentDateFrom']//input",
+    paymentDateTo: "//*[@formcontrolname='paymentDateTo']//input",
     valueSelect: "//ul[contains(@class, 'p-dropdown-item')]",
     errorCode: "[data-test='codeErrorRequired']",
    

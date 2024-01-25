@@ -16,7 +16,7 @@ describe('My Login application', () => {
         await $(utilLocators.menu.menu_item_ticket_processing_reports).click();
         await func.navigateMenu(utilLocators.menu.menu_item_issued_tickets_reports);
     });
-    it('Add API Maintenance', async () => {
+    it('Search Filter', async () => {
         // await func.waitAndFill(locators.fields.ticketNumberStart, issuedTicketsReportTestData.ticketNumberStart, 2000);
         // await func.waitAndFill(locators.fields.ticketNumberEnd, issuedTicketsReportTestData.ticketNumberEnd, 2000);
         await func.waitAndFillWithMore(locators.fields.ticketIssueDateStart, issuedTicketsReportTestData.ticketIssueDateStart, 2000);

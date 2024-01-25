@@ -84,6 +84,7 @@ module.exports = {
         emailCorrespondenceMaintenance: "//*[@id='menu_item_email_correspondence_maintenance']",
         emailGroupMaintenance: "//*[@id='menu_item_email_group_maintenance']",
         letterHeadSetup: "//*[@id='menu_item_letter_head_setup']",
+        systemConfiguration: "//*[@id='menu_item_system_configuration']",
         reports: "//*[@id='menu_item_reports']",
         cashiering: "//*[@id='menu_item_cashiering']",
         cashierDailySettlement: "//*[@id='menu_item_cashier_daily_settlement']",
@@ -109,6 +110,21 @@ module.exports = {
         menu_item_offender_Reports: "//*[@id='menu_item_offender']",
         menu_item_tickets_for_offender_Reports: "//*[@id='menu_item_tickets_for_offender']",
         menu_item_traffic_offence_register_Reports: "//*[@id='menu_item_traffic_offence_register']",
+        menu_item_outstanding_Tickets_Report: "//*[@id='menu_item_outstanding_tickets']",
+        menu_item_Paid_Tickets_Report: "//*[@id='menu_item_paid_tickets']",
+        menu_item_summary_of_paid_tickets_by_payment_location: "//*[@id='menu_item_summary_of_paid_tickets_by_payment_location']",
+        menu_item_summary_of_tickets_issued_by_offence: "//*[@id='menu_item_summary_of_tickets_issued_by_offence']",
+        menu_item_summary_of_tickets_issued_by_parish: "//*[@id='menu_item_summary_of_tickets_issued_by_parish']",
+        menu_item_summary_of_tickets_issued_by_police_officer: "//*[@id='menu_item_summary_of_tickets_issued_by_police_officer']",
+        menu_item_summary_of_tickets_issued_by_police_station: "//*[@id='menu_item_summary_of_tickets_issued_by_police_station']",
+        menu_item_utitlies: "//*[@id='menu_item_utilities']",
+        menu_item_event_audit: "//*[@id='menu_item_event_audit']",
+        menu_item_user_audit: "//*[@id='menu_item_user_audit']",
+        menu_item_void_tickets: "//*[@id='menu_item_void_tickets']",
+        menu_item_warrants_Reports: "//*[@id='menu_item_warrants']",
+        menu_item_warrants_issued_report: "//*[@id='menu_item_warrants_issued_report']",
+        menu_item_warrants_summary_report: "//*[@id='menu_item_warrants_summary_report']",
+
 
     }
 }
