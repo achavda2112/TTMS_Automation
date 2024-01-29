@@ -22,7 +22,8 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './tms-testsuite/dashboard/specs/*.js'
+
+        './tms-testsuite/security/userMaintenance/specs/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -44,7 +45,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 1,
+    maxInstances: 100,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -52,11 +53,11 @@ exports.config = {
     //
     capabilities: [{
         browserName: 'chrome',
-         'goog:chromeOptions': {
-         args: [
-        '--no-sandbox',
-        'ignore-certificate-errors'
-        ],
+        'goog:chromeOptions': {
+            args: [
+                '--no-sandbox',
+                'ignore-certificate-errors'
+            ],
         },
         // acceptInsecureCerts: true
     }],
@@ -132,7 +133,7 @@ exports.config = {
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec'],
 
-    
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -219,19 +220,51 @@ exports.config = {
     beforeHook: function (test, context) {
         // wdio.conf.js
 
-    exports.config = {
-    // other configuration settings...
+        exports.config = {
+            // other configuration settings...
+            runCounter: 1,
 
-    before: function (capabilities, specs) {
-        // Add a custom command to close the current tab
-        browser.addCommand('closeCurrentTab', function () {
-            return this.closeWindow();
-        });
-    },
-};
+            // Define the configuration object
+            config: {
+                before: function (capabilities, specs) {
+                    // Add a custom command to close the current tab
+                    browser.addCommand('closeCurrentTab', function () {
+                        return this.closeWindow();
+                    });
+                },
+                // Add an 'after' hook to increment the counter and rerun the configuration
+                after: function (result, capabilities, specs) {
+                    console.log(`Test run ${runCounter} completed.`);
+
+                    // Increment the counter
+                    runCounter++;
+
+                    // Check if the counter reaches the desired number of runs (e.g., 100)
+                    if (runCounter <= 100) {
+                        console.log(`Starting test run ${runCounter}...`);
+                        // Run the configuration again
+                        runConfig();
+                    }
+                },
+            },
+        };
+        // Initialize a global counter variable
+        global.runCounter = 100;
+
+        // Function to run the WebDriverIO configuration
+        function runConfig() {
+            // Create a deep copy of the configuration to avoid modifying the original
+            const clonedConfig = JSON.parse(JSON.stringify(exports.config));
+
+            // Run the configuration
+            exports.config = clonedConfig;
+        }
+
+        // Initial run
+        runConfig();
 
     },
-    
+
     /**
      * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
      * afterEach in Mocha)

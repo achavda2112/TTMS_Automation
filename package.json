@@ -24,7 +24,9 @@
     "chromedriver": "^116.0.0",
     "csv-stringify": "^6.0.4",
     "date-fns": "^3.2.0",
-    "wdio-chromedriver-service": "^8.1.1"
+    "mocha": "^10.2.0",
+    "wdio-chromedriver-service": "^8.1.1",
+    "webdriverio": "^8.29.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",
