@@ -48,6 +48,7 @@ describe('My Login application', () => {
     await func.waitAndFill(locators.fields.username, result);
     await func.waitAndFill(locators.fields.loginpasswrd, userMaintenanceTestdata.newpwd, 2000);
     await func.waitAndClick(locators.button.login, 2000);
+    await browser.pause(2000);
   })
 
 
