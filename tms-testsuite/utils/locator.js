@@ -124,6 +124,10 @@ module.exports = {
         menu_item_warrants_Reports: "//*[@id='menu_item_warrants']",
         menu_item_warrants_issued_report: "//*[@id='menu_item_warrants_issued_report']",
         menu_item_warrants_summary_report: "//*[@id='menu_item_warrants_summary_report']",
+        paymentProcessing: "//*[@id='menu_item_payment_processing']",
+        payment:"//*[@id='menu_item_payment']",
+        receiptReprint: "//*[@id='menu_item_receipt_reprint']"
+
 
 
     }
