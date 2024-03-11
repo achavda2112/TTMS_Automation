@@ -16,7 +16,7 @@ let result;
     });
     it('Add Email Group', async () => {
         await func.waitAndClick(locators.button.add, 2000);
-        result = await func.setUniqueValue3(locators.fields.name, locators.fields.errorCode, false, 10);
+        result = await func.setUniqueValue(locators.fields.name, locators.fields.errorCode, false, 10, "Title");
         console.log("-----------Result---------", result);
         await func.waitAndFill(locators.fields.description, emailGroupMaintenanceTestData.description, 2000);
         await func.selectDropdown(locators.fields.organization, 2, locators.fields.valueSelect, 2000);

@@ -19,8 +19,8 @@ describe('My Login application', () => {
     it('Search Filter', async () => {
         // await func.waitAndFill(locators.fields.ticketNumberStart, issuedTicketsReportTestData.ticketNumberStart, 2000);
         // await func.waitAndFill(locators.fields.ticketNumberEnd, issuedTicketsReportTestData.ticketNumberEnd, 2000);
-        await func.waitAndFillWithMore(locators.fields.ticketIssueDateStart, issuedTicketsReportTestData.ticketIssueDateStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.ticketIssueDateEnd, issuedTicketsReportTestData.ticketIssueDateEnd, 2000);
+        await func.waitAndFill(locators.fields.ticketIssueDateStart, issuedTicketsReportTestData.ticketIssueDateStart, 2000, true);
+        await func.waitAndFill(locators.fields.ticketIssueDateEnd, issuedTicketsReportTestData.ticketIssueDateEnd, 2000, true);
         // await func.waitAndFill(locators.fields.idNumber, issuedTicketsReportTestData.idNumber, 2000);
         // await func.selectDropdown(locators.fields.offenceParish, 1, locators.fields.valueSelect, 2000);
         // await func.selectDropdown(locators.fields.offenceLocation, 1, locators.fields.valueSelect, 2000);
@@ -34,8 +34,8 @@ describe('My Login application', () => {
         // await func.selectDropdown(locators.fields.vehicleType, 1, locators.fields.valueSelect, 2000);
         // await func.selectDropdown(locators.fields.ticketStatus, 1, locators.fields.valueSelect, 2000);
         // await func.selectDropdown(locators.fields.sortBy, 1, locators.fields.valueSelect, 2000);
-        // await func.waitAndFillWithMore(locators.fields.originalCourtDateStart, issuedTicketsReportTestData.originalCourtDateStart, 2000);
-        // await func.waitAndFillWithMore(locators.fields.originalCourtDateEnd, issuedTicketsReportTestData.originalCourtDateEnd, 2000);
+        // await func.waitAndFill(locators.fields.originalCourtDateStart, issuedTicketsReportTestData.originalCourtDateStart, 2000, true);
+        // await func.waitAndFill(locators.fields.originalCourtDateEnd, issuedTicketsReportTestData.originalCourtDateEnd, 2000, true);
         await func.waitAndClick(locators.button.generateReport, 2000);
         await browser.pause(2000);
         const handles = await browser.getWindowHandles()

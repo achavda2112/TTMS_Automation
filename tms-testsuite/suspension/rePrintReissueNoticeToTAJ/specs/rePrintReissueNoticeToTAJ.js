@@ -19,8 +19,8 @@ let handles;
         await func.navigateMenu(utilLocators.menu.reprintreissueNoticeToTAJ);
     });
     it('Suspend Licences By Points', async () => {
-        await func.waitAndFillWithMore(locators.fields.printDateStart, rePrintReissueNoticeToTAJTestData.priintStartDate, 2000);
-        await func.waitAndFillWithMore(locators.fields.printDateEnd, rePrintReissueNoticeToTAJTestData.printEndDate, 2000);
+        await func.waitAndFill(locators.fields.printDateStart, rePrintReissueNoticeToTAJTestData.priintStartDate, 2000, true);
+        await func.waitAndFill(locators.fields.printDateEnd, rePrintReissueNoticeToTAJTestData.printEndDate, 2000, true);
         await func.waitAndClick(locators.button.search, 2000);
         await func.selectDropdown(locators.fields.collectorate, 1, locators.fields.valueSelect, 2000);
         await func.waitAndClick(locators.fields.checkBox, 2000);

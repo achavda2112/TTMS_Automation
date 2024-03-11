@@ -18,8 +18,8 @@ describe('My Login application', () => {
     });
     it('Search Filter', async () => {
         await func.waitAndClick(locators.fields.user, 2000);
-        await func.waitAndFillWithMore(locators.fields.dateRangeStart, userAuditReportTestData.dateRangeStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.dateRangeEnd, userAuditReportTestData.dateRangeEnd, 2000);
+        await func.waitAndFill(locators.fields.dateRangeStart, userAuditReportTestData.dateRangeStart, 2000, true);
+        await func.waitAndFill(locators.fields.dateRangeEnd, userAuditReportTestData.dateRangeEnd, 2000, true);
         await func.waitAndClick(locators.button.generateReport, 2000);
         await browser.pause(2000);
         const handles = await browser.getWindowHandles()

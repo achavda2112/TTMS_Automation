@@ -21,7 +21,7 @@ describe('My Login application', () => {
         await func.waitAndClear(locators.fields.deliveryDate, 10, 1000);
         await browser.keys([Key.Escape]);
         await browser.pause(3000);
-        await func.waitAndFillWithMore(locators.fields.deliveryDate, deliverDlToItaTestData.deliveryDate, 2000);
+        await func.waitAndFill(locators.fields.deliveryDate, deliverDlToItaTestData.deliveryDate, 2000, true);
 })
     it('Deliver DL', async () => {
         await func.waitAndClick(locators.fields.checkBox, 2000);

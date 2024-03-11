@@ -17,8 +17,8 @@ describe('My Login application', () => {
         await func.navigateMenu(utilLocators.menu.manualPaymentsReceiptListing);
     });
     it('Add API Maintenance', async () => {
-        await func.waitAndFillWithMore(locators.fields.paymentDateStart, manualPaymentsReceiptListingReportTestData.paymentDateStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.paymentDateEnd, manualPaymentsReceiptListingReportTestData.paymentDateEnd, 2000);
+        await func.waitAndFill(locators.fields.paymentDateStart, manualPaymentsReceiptListingReportTestData.paymentDateStart, 2000, true);
+        await func.waitAndFill(locators.fields.paymentDateEnd, manualPaymentsReceiptListingReportTestData.paymentDateEnd, 2000, true);
         await func.waitAndFill(locators.fields.receiptNumbersFrom, manualPaymentsReceiptListingReportTestData.receiptNumbersStart, 2000);
         await func.waitAndFill(locators.fields.receiptNumbersTo, manualPaymentsReceiptListingReportTestData.receiptNumbersEnd, 2000);
         await func.selectDropdown(locators.fields.parish, 1, locators.fields.valueSelect, 2000);

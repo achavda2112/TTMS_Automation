@@ -17,10 +17,10 @@ describe('My Login application', () => {
         await func.navigateMenu(utilLocators.menu.menuItemDisqualifiedDriversLicences);
     });
     it('Add API Maintenance', async () => {
-        await func.waitAndFillWithMore(locators.fields.periodOfDisqualificationStart, disqualifiedDriversLicencesReportTestData.periodOfDisqualificationStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.periodOfDisqualificationEnd, disqualifiedDriversLicencesReportTestData.periodOfDisqualificationEnd, 2000);
-        await func.waitAndFillWithMore(locators.fields.periodOfExpirationStart, disqualifiedDriversLicencesReportTestData.periodOfExpirationStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.periodOfExpirationEnd, disqualifiedDriversLicencesReportTestData.periodOfExpirationEnd, 2000);
+        await func.waitAndFill(locators.fields.periodOfDisqualificationStart, disqualifiedDriversLicencesReportTestData.periodOfDisqualificationStart, 2000, true);
+        await func.waitAndFill(locators.fields.periodOfDisqualificationEnd, disqualifiedDriversLicencesReportTestData.periodOfDisqualificationEnd, 2000, true);
+        await func.waitAndFill(locators.fields.periodOfExpirationStart, disqualifiedDriversLicencesReportTestData.periodOfExpirationStart, 2000, true);
+        await func.waitAndFill(locators.fields.periodOfExpirationEnd, disqualifiedDriversLicencesReportTestData.periodOfExpirationEnd, 2000, true);
         // await func.waitAndClick(locators.fields.licenceSurrenderedALL, 2000);
         await func.waitAndClick(locators.button.generateReport, 2000);
         await browser.pause(2000);

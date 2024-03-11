@@ -17,8 +17,8 @@ describe('My Login application', () => {
         await func.navigateMenu(utilLocators.menu.menu_item_summary_of_paid_tickets_by_payment_location);
     });
     it('Search Filter', async () => {
-        await func.waitAndFillWithMore(locators.fields.paymentDateFrom, summaryOfPaidTicketsByPaymentLocationTestData.paymentDateStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.paymentDateTo, summaryOfPaidTicketsByPaymentLocationTestData.paymentDateEnd, 2000);
+        await func.waitAndFill(locators.fields.paymentDateFrom, summaryOfPaidTicketsByPaymentLocationTestData.paymentDateStart, 2000, true);
+        await func.waitAndFill(locators.fields.paymentDateTo, summaryOfPaidTicketsByPaymentLocationTestData.paymentDateEnd, 2000, true);
         await func.selectDropdown(locators.fields.parish, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.paymentLocation, 1, locators.fields.valueSelect, 2000);
         await func.waitAndClick(locators.button.generateReport, 2000);

@@ -17,8 +17,8 @@ describe('My Login application', () => {
         await func.navigateMenu(utilLocators.menu.withdrawnCasesReports);
     });
     it('Add API Maintenance', async () => {
-        await func.waitAndFillWithMore(locators.fields.dateWithdrawnStart, withdrawnCasesReportTestData.dateWithdrawnStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.dateWithdrawnEnd, withdrawnCasesReportTestData.dateWithdrawnEnd, 2000);
+        await func.waitAndFill(locators.fields.dateWithdrawnStart, withdrawnCasesReportTestData.dateWithdrawnStart, 2000, true);
+        await func.waitAndFill(locators.fields.dateWithdrawnEnd, withdrawnCasesReportTestData.dateWithdrawnEnd, 2000, true);
         await func.selectDropdown(locators.fields.parish, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.court, 1, locators.fields.valueSelect, 2000);
         await func.waitAndClick(locators.button.generateReport, 2000);

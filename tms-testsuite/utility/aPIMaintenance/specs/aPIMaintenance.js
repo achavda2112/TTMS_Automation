@@ -16,10 +16,10 @@ let result;
     });
     it('Add API Maintenance', async () => {
         await func.waitAndClick(locators.button.add, 2000);
-        result = await func.setUniqueValue3(locators.fields.title, locators.fields.errorCode, false, 10);
+        result = await func.setUniqueValue(locators.fields.title, locators.fields.errorCode, false, 10, "Title");
         console.log("-----------Result---------", result);
         await func.waitAndFill(locators.fields.description, aPIMaintenanceTestData.description, 2000);
-        await func.waitAndFillWithMore(locators.fields.expiryDate, aPIMaintenanceTestData.expiryDate, 2000);
+        await func.waitAndFill(locators.fields.expiryDate, aPIMaintenanceTestData.expiryDate, 2000, true);
         await func.waitAndClick(locators.fields.apis, 2000);
         await func.waitAndClick(locators.fields.api1);
         await func.waitAndClick(locators.fields.api2);

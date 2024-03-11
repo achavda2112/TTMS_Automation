@@ -20,8 +20,8 @@ describe('My Login application', () => {
     });
     it('Search Filter', async () => {
         
-        await func.waitAndFillWithMore(locators.fields.ticketIssueDateStart, trafficOffenceRegisterReportTestData.ticketIssueDateStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.ticketIssueDateEnd, trafficOffenceRegisterReportTestData.ticketIssueDateEnd, 2000);
+        await func.waitAndFill(locators.fields.ticketIssueDateStart, trafficOffenceRegisterReportTestData.ticketIssueDateStart, 2000, true);
+        await func.waitAndFill(locators.fields.ticketIssueDateEnd, trafficOffenceRegisterReportTestData.ticketIssueDateEnd, 2000, true);
         await func.selectDropdown(locators.fields.area, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.division, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.stationOffice, 1, locators.fields.valueSelect, 2000);

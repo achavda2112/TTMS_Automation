@@ -23,10 +23,10 @@ describe('My Login application', () => {
 
         await func.selectDropdown(locators.fields.ticketType, 2, locators.fields.valueSelect);
         await func.waitAndClick(locators.button.next, 1000);
-        result = await func.setUniqueValue1(locators.fields.ticketNumber, locators.fields.errorCode, true, 5);
+        result = await func.setUniqueValue(locators.fields.ticketNumber, locators.fields.errorCode, true, 5, "MT");
         console.log("-----------Result---------", result);
         await func.waitAndFill(locators.fields.ticketNumberConfirmation, result);
-        await func.waitAndFillWithMore(locators.fields.ticketissueDate, voidTicketTestData.issueDate);
+        await func.waitAndFill(locators.fields.ticketissueDate, voidTicketTestData.issueDate, true);
         await func.selectDropdown(locators.fields.voidTicket, 2, locators.fields.valueSelect);
         await func.selectDropdown(locators.fields.voidReason, 2, locators.fields.valueSelect);
         await func.waitAndFill(locators.fields.voidComments, voidTicketTestData.comment, 3000);
@@ -38,16 +38,16 @@ describe('My Login application', () => {
         //Offender Information
 
         await func.selectDropdown(locators.fields.idType, 2, locators.fields.idSelect);
-        await func.waitAndFill(locators.fields.idNumber, voidTicketTestData.idnumber, 3000, true);
-        await func.waitAndFill(locators.fields.idNumberconfirmation, voidTicketTestData.confirmidnumber, 3000, true);
+        await func.waitAndFill(locators.fields.idNumber, voidTicketTestData.idnumber, 3000, false,true);
+        await func.waitAndFill(locators.fields.idNumberconfirmation, voidTicketTestData.confirmidnumber, 3000, false,true);
         await browser.pause(1000);
         // await func.waitAndFill(locators.fields.idExpiry, voidTicketTestData.expirationMVRC, 3000);
         // await func.selectDropdown(locators.fields.dlClass, 1, locators.fields.valueSelect);
         // await func.waitAndClick(locators.button.idTypecollapse, 1000);
 
-        // await func.waitAndFill(locators.fields.fname, voidTicketTestData.firstname, 3000, true);
-        // await func.waitAndFill(locators.fields.mname, voidTicketTestData.middlename, 3000,true);
-        // await func.waitAndFill(locators.fields.lname, voidTicketTestData.lastname, 3000,true);
+        // await func.waitAndFill(locators.fields.fname, voidTicketTestData.firstname, 3000, false,true);
+        // await func.waitAndFill(locators.fields.mname, voidTicketTestData.middlename, 3000,false,true);
+        // await func.waitAndFill(locators.fields.lname, voidTicketTestData.lastname, 3000,false,true);
         // await func.waitAndFill(locators.fields.dob, voidTicketTestData.expirationMVRC, 3000);
         // await func.selectDropdown(locators.fields.gender, 1, locators.fields.valueSelect, true);
         // await func.waitAndClick(locators.button.nameCollapse, 1000);
@@ -55,15 +55,15 @@ describe('My Login application', () => {
 
 
 
-        // await func.waitAndFill(locators.fields.streetNo, voidTicketTestData.streetnumber, 3000,true);
-        // await func.waitAndFill(locators.fields.streetName, voidTicketTestData.sname, 3000, true);
-        // await func.waitAndFill(locators.fields.mark, voidTicketTestData.mark, 3000, true);
-        // await func.waitAndFill(locators.fields.pobox, voidTicketTestData.pobox, 3000, true);
-        // await func.waitAndFill(locators.fields.poname, voidTicketTestData.poname, 3000, true);
-        // await func.waitAndFill(locators.fields.parishone, voidTicketTestData.parish11, 3000, true);
-        // await func.waitAndFill(locators.fields.city, voidTicketTestData.city, 3000, true);
-        // await func.waitAndFill(locators.fields.state, voidTicketTestData.state, 3000,true);
-        // await func.waitAndFill(locators.fields.zipcode, voidTicketTestData.zcode, 3000,true);
+        // await func.waitAndFill(locators.fields.streetNo, voidTicketTestData.streetnumber, 3000,false,true);
+        // await func.waitAndFill(locators.fields.streetName, voidTicketTestData.sname, 3000, false,true);
+        // await func.waitAndFill(locators.fields.mark, voidTicketTestData.mark, 3000, false,true);
+        // await func.waitAndFill(locators.fields.pobox, voidTicketTestData.pobox, 3000, false,true);
+        // await func.waitAndFill(locators.fields.poname, voidTicketTestData.poname, 3000, false,true);
+        // await func.waitAndFill(locators.fields.parishone, voidTicketTestData.parish11, 3000, false,true);
+        // await func.waitAndFill(locators.fields.city, voidTicketTestData.city, 3000, false,true);
+        // await func.waitAndFill(locators.fields.state, voidTicketTestData.state, 3000,false,true);
+        // await func.waitAndFill(locators.fields.zipcode, voidTicketTestData.zcode, 3000,false,true);
         // await func.selectDropdown(locators.fields.country, 1, locators.fields.valueSelect, true);
         // await func.waitAndClick(locators.button.addressCollapse, 1000);
         await func.waitAndClick(locators.button.next, 1000);

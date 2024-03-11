@@ -9,7 +9,9 @@ describe('My Login application', () => {
 
   before(async () => {
     await func.login(utilLocators.menu.url, userData.username, userData.password);
+    // await browser.pause(2000);
     await $(utilLocators.menu.ticketProcessing1).waitForExist();
+    await browser.pause(2000);
     await $(utilLocators.menu.ticketProcessing1).click();
     await func.navigateMenu(utilLocators.menu.issueEticket1);
   });
@@ -25,17 +27,16 @@ describe('My Login application', () => {
 
     //Offender Information
 
-    await func.selectDropdown(locators.fields.idType, 2, locators.fields.idSelect);
-    await func.waitAndFill(locators.fields.idNumber, issueETicketTestData.idnumber, 3000, true);
-    await func.waitAndFill(locators.fields.idNumberconfirmation, issueETicketTestData.confirmidnumber, 3000, true);
-    await browser.pause(1000);
+
+    await func.selectDropdown(locators.fields.idType, 1, locators.fields.idSelect);
+    await func.waitAndFill(locators.fields.idNumber, issueETicketTestData.idnumber, 3000, false,true);
     // await func.waitAndFill(locators.fields.idExpiry, issueETicketTestData.expirationMVRC, 3000);
     // await func.selectDropdown(locators.fields.dlClass, 1, locators.fields.valueSelect);
     // await func.waitAndClick(locators.button.idTypecollapse, 1000);
 
-    // await func.waitAndFill(locators.fields.fname, issueETicketTestData.firstname, 3000, true);
-    // await func.waitAndFill(locators.fields.mname, issueETicketTestData.middlename, 3000,true);
-    // await func.waitAndFill(locators.fields.lname, issueETicketTestData.lastname, 3000,true);
+    // await func.waitAndFill(locators.fields.fname, issueETicketTestData.firstname, 3000, false,true);
+    // await func.waitAndFill(locators.fields.mname, issueETicketTestData.middlename, 3000,false,true);
+    // await func.waitAndFill(locators.fields.lname, issueETicketTestData.lastname, 3000,false,true);
     // await func.waitAndFill(locators.fields.dob, issueETicketTestData.expirationMVRC, 3000);
     // await func.selectDropdown(locators.fields.gender, 1, locators.fields.valueSelect, true);
     // await func.waitAndClick(locators.button.nameCollapse, 1000);
@@ -43,17 +44,18 @@ describe('My Login application', () => {
     
 
 
-    // await func.waitAndFill(locators.fields.streetNo, issueETicketTestData.streetnumber, 3000,true);
-    // await func.waitAndFill(locators.fields.streetName, issueETicketTestData.sname, 3000, true);
-    // await func.waitAndFill(locators.fields.mark, issueETicketTestData.mark, 3000, true);
-    // await func.waitAndFill(locators.fields.pobox, issueETicketTestData.pobox, 3000, true);
-    // await func.waitAndFill(locators.fields.poname, issueETicketTestData.poname, 3000, true);
-    // await func.waitAndFill(locators.fields.parishone, issueETicketTestData.parish11, 3000, true);
-    // await func.waitAndFill(locators.fields.city, issueETicketTestData.city, 3000, true);
-    // await func.waitAndFill(locators.fields.state, issueETicketTestData.state, 3000,true);
-    // await func.waitAndFill(locators.fields.zipcode, issueETicketTestData.zcode, 3000,true);
+    // await func.waitAndFill(locators.fields.streetNo, issueETicketTestData.streetnumber, 3000,false,true);
+    // await func.waitAndFill(locators.fields.streetName, issueETicketTestData.sname, 3000, false,true);
+    // await func.waitAndFill(locators.fields.mark, issueETicketTestData.mark, 3000, false,true);
+    // await func.waitAndFill(locators.fields.pobox, issueETicketTestData.pobox, 3000, false,true);
+    // await func.waitAndFill(locators.fields.poname, issueETicketTestData.poname, 3000, false,true);
+    // await func.waitAndFill(locators.fields.parishone, issueETicketTestData.parish11, 3000, false,true);
+    // await func.waitAndFill(locators.fields.city, issueETicketTestData.city, 3000, false,true);
+    // await func.waitAndFill(locators.fields.state, issueETicketTestData.state, 3000,false,true);
+    // await func.waitAndFill(locators.fields.zipcode, issueETicketTestData.zcode, 3000,false,true);
     // await func.selectDropdown(locators.fields.country, 1, locators.fields.valueSelect, true);
     // await func.waitAndClick(locators.button.addressCollapse, 1000);
+    await func.waitAndClick(locators.button.next, 1000);
     await func.waitAndClick(locators.button.next, 1000);
 
     //Vehicle Information
@@ -71,6 +73,7 @@ describe('My Login application', () => {
     await func.selectDropdown(locators.fields.vehiclecolor1, 2, locators.fields.valueSelect);
     await func.selectDropdown(locators.fields.vehiclecolor2, 2, locators.fields.valueSelect);
     await func.waitAndClick(locators.button.next, 1000);
+    await func.waitAndClick(locators.button.next, 1000);
 
     //Offence Information
 
@@ -79,20 +82,13 @@ describe('My Login application', () => {
     await func.waitAndFill(locators.fields.inthevicinityof, issueETicketTestData.vicinity, 3000);
     await func.waitAndFill(locators.fields.from, issueETicketTestData.from, 3000);
     await func.waitAndFill(locators.fields.to, issueETicketTestData.to, 3000);
-    await func.waitAndClick(locators.button.locationbtn, 1000);
 
     await func.selectDropdown(locators.fields.selectoffence, 1, locators.fields.valueSelect);
-    await func.waitAndFill(locators.fields.fine, issueETicketTestData.fine, 3000, true);
-    await func.waitAndFill(locators.fields.demiritpoints, issueETicketTestData.demiritpoints, 3000, true);
-    await func.waitAndFill(locators.fields.offencedesc, issueETicketTestData.offencedesc, 3000, true);
+    await func.waitAndFill(locators.fields.fine, issueETicketTestData.fine, 3000, false,true);
+    await func.waitAndFill(locators.fields.demiritpoints, issueETicketTestData.demiritpoints, 3000, false,true);
+    await func.waitAndFill(locators.fields.offencedesc, issueETicketTestData.offencedesc, 3000, false,true);
     await func.waitAndFill(locators.fields.comments, issueETicketTestData.comment, 3000);
     await func.waitAndClick(locators.button.offencebtn, 1000);
-
-    await func.selectDropdown(locators.fields.selectzone, 1, locators.fields.valueSelect);
-    await func.selectDropdown(locators.fields.speeddetectiondevice, 1, locators.fields.valueSelect);
-    await func.waitAndFill(locators.fields.postalspeed, issueETicketTestData.postalspeed, 3000);
-    await func.waitAndFill(locators.fields.recordedspeed, issueETicketTestData.recordedspeed1, 3000);
-    await func.waitAndClick(locators.button.zonebtn, 1000);
     await func.waitAndClick(locators.button.next, 1000);
 
     //Court Information

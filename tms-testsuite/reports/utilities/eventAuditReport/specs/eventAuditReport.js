@@ -18,8 +18,8 @@ describe('My Login application', () => {
     });
     it('Search Filter', async () => {
         await func.selectDropdown(locators.fields.feature, 1, locators.fields.valueSelect, 2000);
-        await func.waitAndFillWithMore(locators.fields.dateRangeStart, eventAuditReportTestData.dateRangeStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.dateRangeEnd, eventAuditReportTestData.dateRangeEnd, 2000);
+        await func.waitAndFill(locators.fields.dateRangeStart, eventAuditReportTestData.dateRangeStart, 2000, true);
+        await func.waitAndFill(locators.fields.dateRangeEnd, eventAuditReportTestData.dateRangeEnd, 2000, true);
         await func.waitAndClick(locators.fields.user, 2000);
         await func.waitAndClick(locators.fields.checkBox, 2000);
         await func.waitAndClick(locators.button.generateReport, 2000);

@@ -17,8 +17,8 @@ describe('My Login application', () => {
         await func.navigateMenu(utilLocators.menu.menuItemExpungedDemeritPoints);
     });
     it('Add API Maintenance', async () => {
-        await func.waitAndFillWithMore(locators.fields.expungementDateFrom, expungedDemeritPointsReportTestData.expungementDateFrom, 2000);
-        await func.waitAndFillWithMore(locators.fields.expungementDateEnd, expungedDemeritPointsReportTestData.expungementDateEnd, 2000);
+        await func.waitAndFill(locators.fields.expungementDateFrom, expungedDemeritPointsReportTestData.expungementDateFrom, 2000, true);
+        await func.waitAndFill(locators.fields.expungementDateEnd, expungedDemeritPointsReportTestData.expungementDateEnd, 2000, true);
         await func.waitAndClick(locators.button.generateReport, 2000);
         await browser.pause(2000);
         const handles = await browser.getWindowHandles()

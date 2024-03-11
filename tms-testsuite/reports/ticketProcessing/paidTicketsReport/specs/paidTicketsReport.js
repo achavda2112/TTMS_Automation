@@ -17,14 +17,14 @@ describe('My Login application', () => {
         await func.navigateMenu(utilLocators.menu.menu_item_Paid_Tickets_Report);
     });
     it('Search Filter', async () => {
-        await func.waitAndFillWithMore(locators.fields.ticketIssueDateStart, paidTicketsReportTestData.ticketIssueDateStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.ticketIssueDateEnd, paidTicketsReportTestData.ticketIssueDateEnd, 2000);
+        await func.waitAndFill(locators.fields.ticketIssueDateStart, paidTicketsReportTestData.ticketIssueDateStart, 2000, true);
+        await func.waitAndFill(locators.fields.ticketIssueDateEnd, paidTicketsReportTestData.ticketIssueDateEnd, 2000, true);
         await func.selectDropdown(locators.fields.area, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.policeStation, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.parish, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.paymentLocation, 1, locators.fields.valueSelect, 2000);
-        await func.waitAndFillWithMore(locators.fields.paymentDateFrom, paidTicketsReportTestData.paymentDateStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.paymentDateTo, paidTicketsReportTestData.paymentDateEnd, 2000);
+        await func.waitAndFill(locators.fields.paymentDateFrom, paidTicketsReportTestData.paymentDateStart, 2000, true);
+        await func.waitAndFill(locators.fields.paymentDateTo, paidTicketsReportTestData.paymentDateEnd, 2000, true);
         await func.waitAndClick(locators.button.generateReport, 2000);
         await browser.pause(2000);
         const handles = await browser.getWindowHandles()

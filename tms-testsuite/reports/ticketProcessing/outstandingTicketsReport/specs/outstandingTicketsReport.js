@@ -17,8 +17,8 @@ describe('My Login application', () => {
         await func.navigateMenu(utilLocators.menu.menu_item_outstanding_Tickets_Report);
     });
     it('Search Filter', async () => {
-        await func.waitAndFillWithMore(locators.fields.ticketIssueDateStart, outstandingTicketsReportTestData.ticketIssueDateStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.ticketIssueDateEnd, outstandingTicketsReportTestData.ticketIssueDateEnd, 2000);
+        await func.waitAndFill(locators.fields.ticketIssueDateStart, outstandingTicketsReportTestData.ticketIssueDateStart, 2000, true);
+        await func.waitAndFill(locators.fields.ticketIssueDateEnd, outstandingTicketsReportTestData.ticketIssueDateEnd, 2000, true);
         await func.selectDropdown(locators.fields.parish, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.court, 1, locators.fields.valueSelect, 2000);
         // await func.selectDropdown(locators.fields.sortBy, 1, locators.fields.valueSelect, 2000);

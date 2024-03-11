@@ -21,7 +21,7 @@ describe('My Login application', () => {
     it('Update Court', async () => {
         await func.selectDropdown(locators.fields.hearingType, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.courtDecision, 4, locators.fields.valueSelect, 2000);
-        await func.waitAndFillWithMore(locators.fields.newCourtDate, updateCourtDetailsTestData.newCourtDate, 2000);
+        await func.waitAndFill(locators.fields.newCourtDate, updateCourtDetailsTestData.newCourtDate, 2000, true);
         await func.selectDropdown(locators.fields.newSlot, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.newHearingType, 3, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.reason, 3, locators.fields.valueSelect, 2000);

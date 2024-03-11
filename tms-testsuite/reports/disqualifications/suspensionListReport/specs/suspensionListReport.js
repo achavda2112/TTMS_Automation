@@ -17,8 +17,8 @@ describe('My Login application', () => {
         await func.navigateMenu(utilLocators.menu.menuItemSuspensionList);
     });
     it('Add API Maintenance', async () => {
-        await func.waitAndFillWithMore(locators.fields.suspensionEffectiveDateRangeStart, suspensionListReportTestData.suspensionEffectiveDateRangeStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.suspensionEffectiveDateRangeEnd, suspensionListReportTestData.suspensionEffectiveDateRangeEnd, 2000);
+        await func.waitAndFill(locators.fields.suspensionEffectiveDateRangeStart, suspensionListReportTestData.suspensionEffectiveDateRangeStart, 2000, true);
+        await func.waitAndFill(locators.fields.suspensionEffectiveDateRangeEnd, suspensionListReportTestData.suspensionEffectiveDateRangeEnd, 2000, true);
         await func.waitAndClick(locators.button.generateReport, 2000);
         await browser.pause(2000);
         const handles = await browser.getWindowHandles()

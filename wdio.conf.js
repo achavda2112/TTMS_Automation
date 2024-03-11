@@ -22,8 +22,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-
-        './tms-testsuite/security/userMaintenance/specs/*.js'
+        './tms-testsuite/ticketProcessing/draftTicket/specs/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -96,7 +95,7 @@ exports.config = {
     baseUrl: 'http://localhost:4200/',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 30000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response

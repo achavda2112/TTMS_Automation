@@ -17,8 +17,8 @@ describe('My Login application', () => {
         await func.navigateMenu(utilLocators.menu.menu_item_summary_of_tickets_issued_by_offence);
     });
     it('Search Filter', async () => {
-        await func.waitAndFillWithMore(locators.fields.paymentDateFrom, summaryOfTicketsIssuedByOffenceReportTestData.ticketIssueDateStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.paymentDateTo, summaryOfTicketsIssuedByOffenceReportTestData.ticketIssueDateEnd, 2000);
+        await func.waitAndFill(locators.fields.paymentDateFrom, summaryOfTicketsIssuedByOffenceReportTestData.ticketIssueDateStart, 2000, true);
+        await func.waitAndFill(locators.fields.paymentDateTo, summaryOfTicketsIssuedByOffenceReportTestData.ticketIssueDateEnd, 2000, true);
         await func.waitAndClick(locators.button.generateReport, 2000);
         await browser.pause(2000);
         const handles = await browser.getWindowHandles()

@@ -19,7 +19,7 @@ describe('My Login application', () => {
 
   it('Add User Maintenanace', async () => {
     await func.waitAndClick(locators.button.adduserMaintenance, 3000);
-    result = await func.setUniqueValue2(locators.fields.userName, locators.fields.errorCode, false, 10);
+    result = await func.setUniqueValue(locators.fields.userName, locators.fields.errorCode, false, 10, "User");
     console.log("-----------Result---------", result);
     await func.generateUniqueEmail(locators.fields.email, 3000);
     //await func.waitAndFill(locators.fields.email, userMaintenanceTestdata.email, 3000);

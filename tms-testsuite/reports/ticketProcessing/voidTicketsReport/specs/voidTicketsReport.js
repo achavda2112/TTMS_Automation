@@ -17,8 +17,8 @@ describe('My Login application', () => {
         await func.navigateMenu(utilLocators.menu.menu_item_void_tickets);
     });
     it('Search Filter', async () => {
-        await func.waitAndFillWithMore(locators.fields.authorisationDateFrom, voidTicketsReportTestData.authorisationDateFrom, 2000);
-        await func.waitAndFillWithMore(locators.fields.authorisationDateTo, voidTicketsReportTestData.authorisationDateTo, 2000);
+        await func.waitAndFill(locators.fields.authorisationDateFrom, voidTicketsReportTestData.authorisationDateFrom, 2000, true);
+        await func.waitAndFill(locators.fields.authorisationDateTo, voidTicketsReportTestData.authorisationDateTo, 2000, true);
         await func.selectDropdown(locators.fields.area, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.division, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.StationOffice, 1, locators.fields.valueSelect, 2000);

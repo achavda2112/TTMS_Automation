@@ -19,7 +19,7 @@ describe('My Login application', () => {
         await func.waitAndClear(locators.fields.courtDate, 10, 1000);
         await browser.keys([Key.Escape]);
         await browser.pause(3000);
-        await func.waitAndFillWithMore(locators.fields.courtDate1, prepareCourtSheetTestData.courtDate, 2000);
+        await func.waitAndFill(locators.fields.courtDate1, prepareCourtSheetTestData.courtDate, 2000, true);
         await func.selectDropdown(locators.fields.sortBy, 1, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.noOfRecords, prepareCourtSheetTestData.numberOfRecords, 2000);
         await func.selectDropdown(locators.fields.modeOfEntry, 2, locators.fields.valueSelect, 2000);

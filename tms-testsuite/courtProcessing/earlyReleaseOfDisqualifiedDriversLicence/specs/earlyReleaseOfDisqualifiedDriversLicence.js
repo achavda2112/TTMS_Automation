@@ -21,7 +21,7 @@ describe('My Login application', () => {
 })
     it('Release DL', async () => {
         await func.waitAndClick(locators.fields.release, 2000);
-        await func.waitAndFillWithMore(locators.fields.releaseDate, earlyReleaseOfDisqualifiedDriversLicenceTestData.releaseDate, 2000);
+        await func.waitAndFill(locators.fields.releaseDate, earlyReleaseOfDisqualifiedDriversLicenceTestData.releaseDate, 2000, true);
         await func.selectDropdown(locators.fields.releaseByCourt, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.releaseByMagistrate, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.reason, 1, locators.fields.valueSelect, 2000);

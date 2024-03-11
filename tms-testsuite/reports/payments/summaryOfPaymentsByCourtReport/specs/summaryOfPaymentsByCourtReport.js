@@ -17,8 +17,8 @@ describe('My Login application', () => {
         await func.navigateMenu(utilLocators.menu.failedPaymentsRepors);
     });
     it('Add API Maintenance', async () => {
-        await func.waitAndFillWithMore(locators.fields.PaymentDateStart, summaryOfPaymentsByCourtReportTestData.paymentDateStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.PaymentDateEnd, summaryOfPaymentsByCourtReportTestData.paymentDateEnd, 2000);
+        await func.waitAndFill(locators.fields.PaymentDateStart, summaryOfPaymentsByCourtReportTestData.paymentDateStart, 2000, true);
+        await func.waitAndFill(locators.fields.PaymentDateEnd, summaryOfPaymentsByCourtReportTestData.paymentDateEnd, 2000, true);
         await func.waitAndClick(locators.button.generateReport, 2000);
         await browser.pause(2000);
         const handles = await browser.getWindowHandles()

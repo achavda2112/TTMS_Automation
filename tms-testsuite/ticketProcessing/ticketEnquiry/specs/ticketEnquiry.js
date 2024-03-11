@@ -26,7 +26,7 @@ describe('My Login application', () => {
         await func.waitAndFill(locators.fields.ticketNumber, ticketEnquiryTestData.ticketNumber);
         await browser.keys([Key.Enter]);
         await func.waitAndFill(locators.fields.dlNumber, ticketEnquiryTestData.idNumber);
-        await func.waitAndFillWithMore(locators.fields.issueDateStart, ticketEnquiryTestData.issueDateStart1);
+        await func.waitAndFill(locators.fields.issueDateStart, ticketEnquiryTestData.issueDateStart1, true);
         await func.waitAndFill(locators.fields.issueDateEnd, ticketEnquiryTestData.issueDateEnd1);
         await func.selectDropdown(locators.fields.offence, 1, locators.fields.valueSelect);
         await func.selectDropdown(locators.fields.offenceParish, 1, locators.fields.valueSelect);
@@ -34,8 +34,8 @@ describe('My Login application', () => {
         await func.selectDropdown(locators.fields.policeStation, 2, locators.fields.valueSelect);
         await func.selectDropdown(locators.fields.court, 1, locators.fields.valueSelect);
         await func.selectDropdown(locators.fields.policeOfficer, 1, locators.fields.valueSelect);
-        await func.waitAndFillWithMore(locators.fields.courtDateStart, ticketEnquiryTestData.courtDateStart1);
-        await func.waitAndFillWithMore(locators.fields.courtDateEnd, ticketEnquiryTestData.courtDateEnd1);
+        await func.waitAndFill(locators.fields.courtDateStart, ticketEnquiryTestData.courtDateStart1, true);
+        await func.waitAndFill(locators.fields.courtDateEnd, ticketEnquiryTestData.courtDateEnd1, true);
         await func.selectDropdown(locators.fields.createdBy, 5, locators.fields.valueSelect);
         await func.waitAndClick(locators.button.applyFilter, 2000);
         await func.waitAndClick(locators.button.clear, 2000);

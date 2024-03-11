@@ -21,7 +21,7 @@ describe('My Login application', () => {
 })
     it('withdraw Case', async () => {
         await func.selectDropdown(locators.fields.reasonForWithdrawal, 1, locators.fields.valueSelect, 2000);
-        await func.waitAndFillWithMore(locators.fields.dateOfWithdrawal, withdrawnCaseListTestData.dateOfWithdrawal, 2000);
+        await func.waitAndFill(locators.fields.dateOfWithdrawal, withdrawnCaseListTestData.dateOfWithdrawal, 2000, true);
         await func.selectDropdown(locators.fields.approvedbyRM, 1, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.comments, withdrawnCaseListTestData.comments, 2000);
         await func.waitAndClick(locators.button.save, 2000);

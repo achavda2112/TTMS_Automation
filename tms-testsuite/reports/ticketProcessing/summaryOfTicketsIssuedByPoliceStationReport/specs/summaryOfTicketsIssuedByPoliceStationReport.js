@@ -17,8 +17,8 @@ describe('My Login application', () => {
         await func.navigateMenu(utilLocators.menu.menu_item_summary_of_tickets_issued_by_police_station);
     });
     it('Search Filter', async () => {
-        await func.waitAndFillWithMore(locators.fields.paymentDateFrom, summaryOfTicketsIssuedByPoliceStationReportTestData.ticketIssueDateStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.paymentDateTo, summaryOfTicketsIssuedByPoliceStationReportTestData.ticketIssueDateEnd, 2000);
+        await func.waitAndFill(locators.fields.paymentDateFrom, summaryOfTicketsIssuedByPoliceStationReportTestData.ticketIssueDateStart, 2000, true);
+        await func.waitAndFill(locators.fields.paymentDateTo, summaryOfTicketsIssuedByPoliceStationReportTestData.ticketIssueDateEnd, 2000, true);
         await func.selectDropdown(locators.fields.area, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.division, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.StationOffice, 1, locators.fields.valueSelect, 2000);

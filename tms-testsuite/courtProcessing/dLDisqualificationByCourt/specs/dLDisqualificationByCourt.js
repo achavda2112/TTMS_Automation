@@ -22,7 +22,7 @@ describe('My Login application', () => {
         await func.waitAndClick(locators.fields.dLDisqualification, 2000);
         await func.waitAndFill(locators.fields.disqualificationDuration, dLDisqualificationByCourtTestData.disqualificationDuration, 2000);
         await func.waitAndClick(locators.fields.dLSurrendered, 2000);
-        await func.waitAndFillWithMore(locators.fields.dlSurrenderedDate, dLDisqualificationByCourtTestData.dlSurrenderedDate, 2000);
+        await func.waitAndFill(locators.fields.dlSurrenderedDate, dLDisqualificationByCourtTestData.dlSurrenderedDate, 2000, true);
         await func.waitAndFill(locators.fields.receivedBy, dLDisqualificationByCourtTestData.receivedBy, 2000);
         await func.selectDropdown(locators.fields.reason, 2, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.comments, dLDisqualificationByCourtTestData.comment, 2000);

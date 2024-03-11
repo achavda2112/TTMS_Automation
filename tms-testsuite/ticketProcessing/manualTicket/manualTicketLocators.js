@@ -62,7 +62,7 @@ module.exports = {
         from : "[id='from']",
         to : "[id='to']",
 
-        selectoffence : "//p-dropdown[@ng-reflect-name='offence']",
+        selectoffence : "//p-dropdown[@id='offense']",
         fine : "[id='fine']",
         demiritpoints : "[id='demerit']",
         offencedesc : "[id='desc']",
@@ -74,6 +74,7 @@ module.exports = {
         recordedspeed : "[id='recordedSpeed']",
        
         courtlocation : "//p-dropdown[@ng-reflect-name='courtLocation']",
+        inforcementOfficer: "//p-dropdown[@id='enforcementOfficer']",
         courtDate : "//p-calendar[@ng-reflect-name='courtDate']",
         mandatoryCourtAppearance : "//p-checkbox[@ng-reflect-name='courtAppearance']",
         

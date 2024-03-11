@@ -18,7 +18,7 @@ describe('My Login application', () => {
     });
     it('Add API Maintenance', async () => {
         await func.waitAndFill(locators.fields.demeritPointsStart, offenderswithDemeritPointsReportTestData.demeritPointsStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.demeritPointsEnd, offenderswithDemeritPointsReportTestData.demeritPointsEnd, 2000);
+        await func.waitAndFill(locators.fields.demeritPointsEnd, offenderswithDemeritPointsReportTestData.demeritPointsEnd, 2000, true);
         // await func.selectDropdown(locators.fields.sortBy, 1, locators.fields.valueSelect, 2000);
         await func.waitAndClick(locators.button.generateReport, 2000);
         await browser.pause(2000);

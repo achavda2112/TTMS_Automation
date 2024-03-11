@@ -17,7 +17,7 @@ describe('My Login application', () => {
 
     it('Warrant Enquiry', async () => {
         await func.waitAndFill(locators.fields.warrantrefno, warrantProcessingTestData.warrrantRefNumber, 2000);
-        await func.waitAndFillWithMore(locators.fields.warrantIssueDateEnd, warrantProcessingTestData.warrantIssueEndDate, 2000);
+        await func.waitAndFillWith(locators.fields.warrantIssueDateEnd, warrantProcessingTestData.warrantIssueEndDate, 2000, true);
         await func.waitAndFill(locators.fields.dlNumber, warrantProcessingTestData.dlNumber, 2000);
         await func.selectDropdown(locators.fields.issuingMagistrate, 1, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.offenderName, warrantProcessingTestData.offenderName, 2000);
@@ -32,7 +32,7 @@ describe('My Login application', () => {
         await func.waitAndClick(locators.fields.checkBox, 2000);
         await func.waitAndClick(locators.fields.referenceNumber, 2000);
         await func.waitAndClick(locators.fields.activityTab, 2000);
-        await func.waitAndFillWithMore(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000);
+        await func.waitAndFill(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000, true);
         await func.selectDropdown(locators.fields.policeStation, 1, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.dispatchBy, warrantProcessingTestData.dispatchedBy, 2000);
         await func.waitAndFill(locators.fields.comments, warrantProcessingTestData.comments, 2000);
@@ -40,7 +40,7 @@ describe('My Login application', () => {
         await func.waitAndClick(locators.fields.checkBox, 2000);
         await func.waitAndClick(locators.fields.referenceNumber, 2000);
         await func.waitAndClick(locators.fields.activityTab, 2000);
-        await func.waitAndFillWithMore(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000);
+        await func.waitAndFill(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000, true);
         await func.selectDropdown(locators.fields.policeStation, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.policeOfficer, 2, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.dispatchBy, warrantProcessingTestData.dispatchedBy, 2000);
@@ -50,7 +50,7 @@ describe('My Login application', () => {
 
     it('Received By police', async () => {
         await func.waitAndFill(locators.fields.warrantrefno, warrantProcessingTestData.warrrantRefNumber, 2000);
-        await func.waitAndFillWithMore(locators.fields.warrantIssueDateEnd, warrantProcessingTestData.warrantIssueEndDate, 2000);
+        await func.waitAndFill(locators.fields.warrantIssueDateEnd, warrantProcessingTestData.warrantIssueEndDate, 2000, true);
         await func.waitAndFill(locators.fields.dlNumber, warrantProcessingTestData.dlNumber, 2000);
         await func.selectDropdown(locators.fields.issuingMagistrate, 1, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.offenderName, warrantProcessingTestData.offenderName, 2000);
@@ -61,7 +61,7 @@ describe('My Login application', () => {
         await func.waitAndClick(locators.fields.checkBox, 2000);
         await func.waitAndClick(locators.fields.referenceNumber, 2000);
         await func.waitAndClick(locators.fields.activityTab, 2000);
-        await func.waitAndFillWithMore(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000);
+        await func.waitAndFill(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000, true);
         await func.selectDropdown(locators.fields.policeStation, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.receivedByOfficer, 2, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.comments, warrantProcessingTestData.comments, 2000);
@@ -70,7 +70,7 @@ describe('My Login application', () => {
 
     it('Assigned to officer', async () => {
         await func.waitAndFill(locators.fields.warrantrefno, warrantProcessingTestData.warrrantRefNumber, 2000);
-        await func.waitAndFillWithMore(locators.fields.warrantIssueDateEnd, warrantProcessingTestData.warrantIssueEndDate, 2000);
+        await func.waitAndFill(locators.fields.warrantIssueDateEnd, warrantProcessingTestData.warrantIssueEndDate, 2000, true);
         await func.waitAndFill(locators.fields.dlNumber, warrantProcessingTestData.dlNumber, 2000);
         await func.selectDropdown(locators.fields.issuingMagistrate, 1, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.offenderName, warrantProcessingTestData.offenderName, 2000);
@@ -82,7 +82,7 @@ describe('My Login application', () => {
         await func.waitAndClick(locators.fields.checkBox, 2000);
         await func.waitAndClick(locators.fields.referenceNumber, 2000);
         await func.waitAndClick(locators.fields.activityTab, 2000);
-        await func.waitAndFillWithMore(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000);
+        await func.waitAndFill(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000, true);
         await func.selectDropdown(locators.fields.policeStation, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.assignedBy, 2, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.assignedToPoliceStation, 1, locators.fields.valueSelect, 2000);
@@ -94,7 +94,7 @@ describe('My Login application', () => {
 
     it('Executed Warrant', async () => {
         await func.waitAndFill(locators.fields.warrantrefno, warrantProcessingTestData.warrrantRefNumber, 2000);
-        await func.waitAndFillWithMore(locators.fields.warrantIssueDateEnd, warrantProcessingTestData.warrantIssueEndDate, 2000);
+        await func.waitAndFill(locators.fields.warrantIssueDateEnd, warrantProcessingTestData.warrantIssueEndDate, 2000, true);
         await func.waitAndFill(locators.fields.dlNumber, warrantProcessingTestData.dlNumber, 2000);
         await func.selectDropdown(locators.fields.issuingMagistrate, 1, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.offenderName, warrantProcessingTestData.offenderName, 2000);
@@ -106,7 +106,7 @@ describe('My Login application', () => {
         await func.waitAndClick(locators.fields.checkBox, 2000);
         await func.waitAndClick(locators.fields.referenceNumber, 2000);
         await func.waitAndClick(locators.fields.activityTab, 2000);
-        await func.waitAndFillWithMore(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000);
+        await func.waitAndFill(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000, true);
         await func.selectDropdown(locators.fields.policeStation, 1, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.executedBy, warrantProcessingTestData.executedBy, 2000);
         await func.waitAndFill(locators.fields.location, warrantProcessingTestData.location, 2000);
@@ -115,7 +115,7 @@ describe('My Login application', () => {
     })
     it('Return to Court', async () => {
         await func.waitAndFill(locators.fields.warrantrefno, warrantProcessingTestData.warrrantRefNumber, 2000);
-        await func.waitAndFillWithMore(locators.fields.warrantIssueDateEnd, warrantProcessingTestData.warrantIssueEndDate, 2000);
+        await func.waitAndFill(locators.fields.warrantIssueDateEnd, warrantProcessingTestData.warrantIssueEndDate, 2000, true);
         await func.waitAndFill(locators.fields.dlNumber, warrantProcessingTestData.dlNumber, 2000);            await func.selectDropdown(locators.fields.issuingMagistrate, 1, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.offenderName, warrantProcessingTestData.offenderName, 2000);
         await func.selectDropdown(locators.fields.workflowState, 4, locators.fields.valueSelect, 2000);
@@ -127,7 +127,7 @@ describe('My Login application', () => {
         await func.waitAndClick(locators.fields.referenceNumber, 2000);
         await func.waitAndClick(locators.fields.activityTab, 2000);
         await func.selectDropdown(locators.fields.activity, 2, locators.fields.valueSelect, 2000);
-        await func.waitAndFillWithMore(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000);
+        await func.waitAndFill(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000, true);
         await func.selectDropdown(locators.fields.policeStation, 1, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.returnedBy, warrantProcessingTestData.returnedBy, 2000);
         await func.waitAndFill(locators.fields.comments, warrantProcessingTestData.comments, 2000);
@@ -136,7 +136,7 @@ describe('My Login application', () => {
 
         it('Recieve By Court', async () => {
         await func.waitAndFill(locators.fields.warrantrefno, warrantProcessingTestData.warrrantRefNumber, 2000);
-        await func.waitAndFillWithMore(locators.fields.warrantIssueDateEnd, warrantProcessingTestData.warrantIssueEndDate, 2000);
+        await func.waitAndFill(locators.fields.warrantIssueDateEnd, warrantProcessingTestData.warrantIssueEndDate, 2000, true);
         await func.waitAndFill(locators.fields.dlNumber, warrantProcessingTestData.dlNumber, 2000);
         await func.selectDropdown(locators.fields.issuingMagistrate, 1, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.offenderName, warrantProcessingTestData.offenderName, 2000);
@@ -148,7 +148,7 @@ describe('My Login application', () => {
         await func.waitAndClick(locators.fields.checkBox, 2000);
         await func.waitAndClick(locators.fields.referenceNumber, 2000);
         await func.waitAndClick(locators.fields.activityTab, 2000);
-        await func.waitAndFillWithMore(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000);
+        await func.waitAndFill(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000, true);
         await func.selectDropdown(locators.fields.court, 1, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.receivedBy, warrantProcessingTestData.receivedBy, 2000);
         await func.waitAndFill(locators.fields.comments, warrantProcessingTestData.comments, 2000);
@@ -157,7 +157,7 @@ describe('My Login application', () => {
 
         it('Vacate Order', async () => {
         await func.waitAndFill(locators.fields.warrantrefno, warrantProcessingTestData.warrrantRefNumber, 2000);
-        await func.waitAndFillWithMore(locators.fields.warrantIssueDateEnd, warrantProcessingTestData.warrantIssueEndDate, 2000);
+        await func.waitAndFill(locators.fields.warrantIssueDateEnd, warrantProcessingTestData.warrantIssueEndDate, 2000, true);
         await func.waitAndFill(locators.fields.dlNumber, warrantProcessingTestData.dlNumber, 2000);
         await func.selectDropdown(locators.fields.issuingMagistrate, 1, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.offenderName, warrantProcessingTestData.offenderName, 2000);
@@ -170,7 +170,7 @@ describe('My Login application', () => {
         await func.waitAndClick(locators.fields.referenceNumber, 2000);
         await func.waitAndClick(locators.fields.activityTab, 2000);
         await func.selectDropdown(locators.fields.activity, 2, locators.fields.valueSelect, 2000);
-        await func.waitAndFillWithMore(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000);
+        await func.waitAndFill(locators.fields.activityDate, warrantProcessingTestData.activityDate, 2000, true);
         await func.selectDropdown(locators.fields.court, 1, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.cancelledBy, warrantProcessingTestData.cancelledBy, 2000);
         await func.waitAndFill(locators.fields.comments, warrantProcessingTestData.comments, 2000);

@@ -17,10 +17,10 @@ describe('My Login application', () => {
         await func.navigateMenu(utilLocators.menu.editedPaymentsRepors);
     });
     it('Add API Maintenance', async () => {
-        await func.waitAndFillWithMore(locators.fields.PaymentDateStart, editedPaymentsReportTestData.paymentDateStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.PaymentDateEnd, editedPaymentsReportTestData.paymentDateEnd, 2000);
-        await func.waitAndFillWithMore(locators.fields.authorisationDateStart, editedPaymentsReportTestData.authorisationDateStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.authorisationDateEnd, editedPaymentsReportTestData.authorisationDateEnd, 2000);
+        await func.waitAndFill(locators.fields.PaymentDateStart, editedPaymentsReportTestData.paymentDateStart, 2000, true);
+        await func.waitAndFill(locators.fields.PaymentDateEnd, editedPaymentsReportTestData.paymentDateEnd, 2000, true);
+        await func.waitAndFill(locators.fields.authorisationDateStart, editedPaymentsReportTestData.authorisationDateStart, 2000, true);
+        await func.waitAndFill(locators.fields.authorisationDateEnd, editedPaymentsReportTestData.authorisationDateEnd, 2000, true);
         await func.selectDropdown(locators.fields.parish, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.paymentLocation, 1, locators.fields.valueSelect, 2000);
         await func.waitAndClick(locators.fields.listUnauthorizedChangesOnly, 2000);

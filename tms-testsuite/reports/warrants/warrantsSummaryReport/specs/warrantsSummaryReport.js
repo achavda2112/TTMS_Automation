@@ -17,8 +17,8 @@ describe('My Login application', () => {
         await func.navigateMenu(utilLocators.menu.menu_item_warrants_summary_report);
     });
     it('Search Filter', async () => {
-        await func.waitAndFillWithMore(locators.fields.warrantIssueDateStart, warrantsSummaryReportTestData.warrantIssueDateStart, 2000);
-        await func.waitAndFillWithMore(locators.fields.warrantIssueDateEnd, warrantsSummaryReportTestData.warrantIssueDateEnd, 2000);
+        await func.waitAndFill(locators.fields.warrantIssueDateStart, warrantsSummaryReportTestData.warrantIssueDateStart, 2000, true);
+        await func.waitAndFill(locators.fields.warrantIssueDateEnd, warrantsSummaryReportTestData.warrantIssueDateEnd, 2000), true;
         await func.selectDropdown(locators.fields.parish, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.court, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.magistrate, 1, locators.fields.valueSelect, 2000);

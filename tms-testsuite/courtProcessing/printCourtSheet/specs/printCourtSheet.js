@@ -21,11 +21,11 @@ describe('My Login application', () => {
         await func.waitAndClear(locators.fields.courtDateStart, 10, 1000);
         await browser.keys([Key.Escape]);
         await browser.pause(3000);
-        await func.waitAndFillWithMore(locators.fields.courtDateStartInput, printCourtSheetTestData.courtDateStart, 2000);
+        await func.waitAndFill(locators.fields.courtDateStartInput, printCourtSheetTestData.courtDateStart, 2000, true);
         await func.waitAndClear(locators.fields.courtDateEnd, 10, 1000);
         await browser.keys([Key.Escape]);
         await browser.pause(3000);
-        await func.waitAndFillWithMore(locators.fields.courtDateEndInput, printCourtSheetTestData.courtDateEnd, 2000);
+        await func.waitAndFill(locators.fields.courtDateEndInput, printCourtSheetTestData.courtDateEnd, 2000, true);
         await func.selectDropdown(locators.fields.selectSlot, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.sortBy, 1, locators.fields.valueSelect, 2000);
         await func.selectDropdown(locators.fields.modeOfEntry, 2, locators.fields.valueSelect, 2000);

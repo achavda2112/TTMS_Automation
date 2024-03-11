@@ -20,7 +20,7 @@ before(async () => {
 })
     it('Update Appeal', async () => {
         await func.waitAndClick(locators.fields.dateOfAppeal, 2000);
-        await func.waitAndFillWithMore(locators.fields.dateOfAppeal, courtAppealTestData.dateOfAppeal, 2000);
+        await func.waitAndFill(locators.fields.dateOfAppeal, courtAppealTestData.dateOfAppeal, 2000, true);
         await func.selectDropdown(locators.fields.ResultOfAppeal, 2, locators.fields.valueSelect, 2000);
         await func.waitAndFill(locators.fields.comments, courtAppealTestData.comment, 2000);
         await func.waitAndClick(locators.button.save, 2000);
