@@ -50,7 +50,6 @@ describe('My Login application', () => {
    }) 
    it('Inactive Status', async ()=> {
     await func.verifySearch(locators.fields.searchoffencetype, result);
-    await func.waitAndClick(locators.fields.inactiveStatus1, 1, 3000);
-    await func.waitAndClick(locators.fields.acceptAlert, 3000);
+    await func.waitAndClick(locators.fields.inactiveStatus1, 3000);
  }) 
 });

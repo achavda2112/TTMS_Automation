@@ -11,6 +11,7 @@ module.exports = {
         tddescription: 'td#description',
         errorCode: "[data-test='codeErrorRequired']",
         statusType: "[data-test='status']",
+        valueSelect: "//ul[contains(@class, 'p-dropdown-items')]",
         inactiveStatus: "//*[@id='status']/p-inputswitch/div/span",
         acceptAlert: "//button[@data-test='okDialog']"
     }

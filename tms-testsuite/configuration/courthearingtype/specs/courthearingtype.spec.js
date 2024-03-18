@@ -15,6 +15,7 @@ describe('My Login application', () => {
     await func.login(utilLocators.menu.url, userData.username, userData.password);
     await $(utilLocators.menu.configuration).waitForExist();
     await $(utilLocators.menu.configuration).click();
+    await browser.pause(2000);
     await func.navigateMenu(utilLocators.menu.courthearingtype);
     await $(locators.button.addcourthearingtype).waitForExist();
   });
@@ -31,6 +32,7 @@ describe('My Login application', () => {
   it('Edit court hearing type', async () => {   
     await func.waitAndClick(locators.button.editcourthearingtype, 3000);
     await func.waitAndFill(locators.fields.description, courthearingtypeTestData.editcourthearingtypeDescription, 3000);
+    await browser.pause(2000);
     await func.selectDropdown(locators.fields.statusType, 2, locators.fields.valueSelect);
     await func.waitAndClick(locators.button.savecourthearingtype, 1000);
   }) 

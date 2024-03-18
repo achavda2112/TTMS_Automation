@@ -24,5 +24,36 @@ npm install
 npm install @wdio/cli
 npx wdio config
 
-## Authors and acknowledgment
+## How To Run 
+(Use in Static menu) (Use Chrome Browser - 116.0.0)
+npm run wdio 
+- Enter this Code in terminal(on proper path) To Run File.
 
+wdio.config.js 
+- If user wants to run perticuler file then need to give path of that file in above file title.
+- specs: [
+        './tms-testsuite/ticketProcessing/manualTicket/specs/*.js'
+
+<Filename>TestData file
+- User needs to set input data in this file for each file.
+
+<Filename>Locators files
+- If user wants to change any locators for elements in pages.
+
+sequential file - 
+- User need to select from where ticket number should start to create.
+
+Title file - 
+- User need to add number for code for configuration pages auto generation. 
+
+Newuser file - 
+- User need to add number for new user generation number start from.  
+
+Function.js file (In Utils)
+- If user wants to update any function.
+
+TestData.js file (In Utils)
+- To Change Username and password.
+
+Locators.js
+- To change Locators of pages.

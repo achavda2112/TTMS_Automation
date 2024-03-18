@@ -19,6 +19,7 @@ let handles;
         await func.waitAndFill(locators.fields.suspensionEffectiveDate, SuspendByPointsTestData.suspensionEffectiveDate, 2000, true);
         await func.waitAndClick(locators.fields.checkBox, 2000);
         await func.waitAndClick(locators.button.save, 2000);   
+        await func.waitAndClick(locators.button.save, 2000);   
         await browser.pause(2000);
     })
 });

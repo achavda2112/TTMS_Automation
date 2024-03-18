@@ -24,6 +24,7 @@ describe('My Login application', () => {
     const result = await func.setUniqueValue(locators.fields.courtRulingcode, locators.fields.errorCode,true, 2);
     console.log("-----------Result---------",result);
     await func.waitAndFill(locators.fields.description, courtRulingTestData.courtRulingDescription, 3000);
+    await func.selectDropdown(locators.fields.caseStatus, 2, locators.fields.valueSelect, 2000);
     await func.waitAndClick(locators.fields.applicableProperties, 3000);
     await func.waitAndClick(locators.fields.disqualificationAllowed, 3000);
     await func.waitAndClick(locators.button.savecourtRuling, 1000);

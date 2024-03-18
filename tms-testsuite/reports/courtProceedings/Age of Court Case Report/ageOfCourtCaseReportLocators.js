@@ -6,9 +6,10 @@ module.exports = {
         generateCSV: "//*[@id='report-csv-download-button']"
 },
 fields: {
-    appealDateFrom: "//*[@formcontrolname='appealDateFrom']//input",
-    appealDateTo: "//*[@formcontrolname='appealDateTo']//input",
-    court: "//*[@id='court']",
+    dateRangeStart: "//*[@formcontrolname='informationNumberGenerationDateFrom']//input",
+    dateRangeEnd: "//*[@formcontrolname='informationNumberGenerationDateTo']//input",
+    offence: "//*[@id='offenseId']",
+    ageOfCaseInDays: "//*[@id='noOfDaysOfCase']",
     valueSelect: "//ul[contains(@class, 'p-dropdown-item')]",
     errorCode: "[data-test='codeErrorRequired']",
 }

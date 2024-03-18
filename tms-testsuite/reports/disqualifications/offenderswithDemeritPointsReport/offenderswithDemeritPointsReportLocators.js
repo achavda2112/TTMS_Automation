@@ -1,7 +1,9 @@
 module.exports = {
     button: {
-        generateReport: "[data-test='generate']"
-
+        generateReport: "//*[@id='report-default-download-button']",
+        dropdownbuttonreprot: "//*[@id='report-dropdown-button']",
+        generatepdf: "//*[@id='report-pdf-download-button']",
+        generateCSV: "//*[@id='report-csv-download-button']"
 },
 fields: {
     demeritPointsStart: "//*[@id='minDemeritPoints']",

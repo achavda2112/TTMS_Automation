@@ -6,6 +6,7 @@ import { Key } from 'webdriverio'
 import fs from 'fs'
 
 async function waitAndClick(locator, time = 3000) {
+    console.log("locae here",locator)
     await waitForLoader();
     // Wait for locator and click on it
     await $(locator).waitForExist({ timeout: time });
@@ -103,6 +104,7 @@ async function waitForLoaderAndClickNextField() {
 
 async function selectDropdown(locator, optionIndex, optionsLocator, ignoreDisabled = false) {
     await waitForLoader();
+    console.log("locator",locator)
     if (ignoreDisabled && await $(`${locator}//div[contains(@class,'p-disabled')]`).isExisting()) {
         return;
     }

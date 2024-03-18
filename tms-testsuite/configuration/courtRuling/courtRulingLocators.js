@@ -14,6 +14,7 @@ module.exports = {
         applicableProperties1: "//*[@id='demeritPointApplyFlag']",
         applicableProperties2: "//*[@id='finalRulingFlag']",
         disqualificationAllowed: "//p-checkbox[@id='disqualificationDlFlag']",
+        caseStatus: "//p-dropdown[@id='caseStatus']",
         tddescription: 'td#description',
         errorCode: "[data-test='codeErrorRequired']",
         statusType: "[data-test='status']",

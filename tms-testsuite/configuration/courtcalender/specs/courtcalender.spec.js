@@ -16,7 +16,7 @@ describe('My Login application', () => {
     });
 
     it('Add CourtCalender', async () => {
-        await func.selectDropdown(courtcalenderLoctors.fields.selectCourt, 5, courtcalenderLoctors.fields.valueSelect);
+        await func.selectDropdown(courtcalenderLoctors.fields.selectCourt, 1, courtcalenderLoctors.fields.valueSelect);
         await func.selectDropdown(courtcalenderLoctors.fields.selectYear, 1, courtcalenderLoctors.fields.valueSelect);
         await func.waitAndClick(courtcalenderLoctors.fields.monday, 100);
         await func.waitAndClick(courtcalenderLoctors.fields.tuesday, 100);
@@ -33,7 +33,7 @@ describe('My Login application', () => {
 
     })
     it('Edit CourtCalender', async () => {
-        await func.selectDropdown(courtcalenderLoctors.fields.selectCourt, 5, courtcalenderLoctors.fields.valueSelect);
+        await func.selectDropdown(courtcalenderLoctors.fields.selectCourt, 1, courtcalenderLoctors.fields.valueSelect);
         await func.selectDropdown(courtcalenderLoctors.fields.selectYear, 1, courtcalenderLoctors.fields.valueSelect);
         await func.waitAndClick(courtcalenderLoctors.button.clearAll, 1000);
         await func.waitAndClick(courtcalenderLoctors.button.saveCountry, 1000);
