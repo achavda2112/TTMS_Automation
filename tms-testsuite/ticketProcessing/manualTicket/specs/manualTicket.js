@@ -66,7 +66,10 @@ describe('My Login application', () => {
         console.log("QA Test");
         // await func.waitForLoaderAndClickNextField();
         await func.selectDropdown(locators.fields.vehicletype, 2, locators.fields.valueSelect, 3000);
+        
         await func.waitAndFill(locators.fields.mvid, manualTicketTestData.mvid, 3000);
+      
+      
         await func.waitAndFill(locators.fields.mvrcno, manualTicketTestData.mvrcno, 3000);
         await func.waitAndFill(locators.fields.expirationmvrs, manualTicketTestData.expirationMVRC, 3000);
         await func.waitAndFill(locators.fields.vehicleyear, manualTicketTestData.year, 3000);

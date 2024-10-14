@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="domain-map.csv">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/node_modules/third-party-web/dist/domain-map.csv.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -131,7 +131,5 @@ module.exports = {
         payment:"//*[@id='menu_item_payment']",
         receiptReprint: "//*[@id='menu_item_receipt_reprint']"
 
-
-
     }
 }
