@@ -1,6 +1,6 @@
 
 
 module.exports = {
-    username: "achavda",
-    password: "Test@123",
+    username: "pjha",
+    password: "Argusadmin@12345",
 }

@@ -10,6 +10,7 @@ import locator, * as utilLocators from "../../../utils/locator"
 describe('My Login application', () => {
   let result;
 
+
   before(async () => {
     await func.login(utilLocators.menu.url, userData.username, userData.password);
     await $(utilLocators.menu.configuration).waitForExist();

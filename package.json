@@ -21,7 +21,6 @@
     "@wdio/mocha-framework": "^7.20.0",
     "@wdio/spec-reporter": "^7.20.0",
     "chai": "^4.3.6",
-    "chromedriver": "^116.0.0",
     "csv-stringify": "^6.0.4",
     "date-fns": "^3.2.0",
     "mocha": "^10.2.0",
@@ -40,7 +39,7 @@
     "@wdio/mocha-framework": "^7.20.0",
     "@wdio/selenium-standalone-service": "^7.30.2",
     "@wdio/spec-reporter": "^7.20.0",
-    "chromedriver": "^116.0.0",
+    "chromedriver": "^128.0.3",
     "csv-stringify": "^6.0.4",
     "wdio-chromedriver-service": "^8.1.1"
   }
